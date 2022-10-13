@@ -1,5 +1,5 @@
 using System;
-using namespace PaginaOnePiece
+namespace PaginaOnePiece
 {
     public class Personaje
  {
