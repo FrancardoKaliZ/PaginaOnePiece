@@ -13,6 +13,8 @@ namespace PaginaOnePiece
         _NombreMar = NombreMar;
         _InfoMar = InfoMar;
     }
+    public Mar()
+    {}
     public int IdMar
     {
         get{return _IdMar;}

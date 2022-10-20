@@ -20,27 +20,37 @@ body {
 
 .InfoSerie
 {
- background-image: url("../../infoSerie.jfif");
-  position: fixed;
+  height:auto;
+ background-image: url("../../infoSerie.jfif"); 
   top: 10%;
-  left: 2%;
+  left: 0%;
   width: 50%;
   height: auto;
   color: black;
 }
 .poderes
 {
+  height:auto;
  background-image: url("../../infoSerie.jfif");
-  position: fixed;
   bottom: 0%;
-  left: 2%;
+  left: 0%;
   width: 50%;
   height: auto;
   color: black;
 }
 .creador
 {
+  width: 25%;
+  height:auto;
+  background-image: url("../../infoSerie.jfif");
   position: fixed;
   bottom: 10%;
   right: 5%;
+}
+
+.Titulos
+{
+  background-image: url("../../FondoTitulos.jpg");
+  background-color: rgb(67, 228, 228);
+  text-align: center;
 }
