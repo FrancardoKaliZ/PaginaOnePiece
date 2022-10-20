@@ -3,39 +3,39 @@ namespace PaginaOnePiece
 {
     public class Personaje
  {
-    private int _idPersonaje;
+    private int _IdPersonaje;
     private string _NombrePersonaje;
     private string _InfoPersonaje;
-    private int _idBando;
-    private int _idMar;
+    private int _IdBando;
+    private int _IdMar;
     private int _Recompensa;
-    private int _idTripulacion;
-    private int _idHakiRey;
-    private int _idHakiObservasion;
-   private int _idHakiArmadura;
-  private int _idRaza;
+    private int _IdTripulacion;
+    private int _IdHakiRey;
+    private int _IdHakiObservasion;
+   private int _IdHakiArmadura;
+   private int _IdRaza;
  
-    public Personaje(int idPersonaje, string NombrePersonaje, string InfoPersonaje, int idBando, int idMar, int Recompensa,int idTripulacion, int idHakiRey, int idHakiObservasion, int idHakiArmadura, int idRaza)
+    public Personaje(int IdPersonaje, string NombrePersonaje, string InfoPersonaje, int IdBando, int IdMar, int Recompensa,int IdTripulacion, int IdHakiRey, int IdHakiObservasion, int IdHakiArmadura, int IdRaza)
     {
-      _idPersonaje=idPersonaje;
+      _IdPersonaje=IdPersonaje;
       _NombrePersonaje=NombrePersonaje;
       _InfoPersonaje=InfoPersonaje;
-      _idBando=idBando;
-      _idMar=idMar;
+      _IdBando=IdBando;
+      _IdMar=IdMar;
       _Recompensa=Recompensa;
-      _idTripulacion = idTripulacion;
-      _idHakiRey = idHakiRey;
-      _idHakiObservasion=idHakiObservasion;
-      _idHakiArmadura=idHakiArmadura;
-      _idRaza = idRaza;
+      _IdTripulacion = IdTripulacion;
+      _IdHakiRey = IdHakiRey;
+      _IdHakiObservasion=IdHakiObservasion;
+      _IdHakiArmadura=IdHakiArmadura;
+      _IdRaza = IdRaza;
     }
     public Personaje()
     {}
 
-    public int idPersonaje
+    public int IdPersonaje
     {
-        get{return _idPersonaje;}
-        set{_idPersonaje=value;}
+        get{return _IdPersonaje;}
+        set{_IdPersonaje=value;}
     }
       public string NombrePersonaje
     {
@@ -47,49 +47,49 @@ namespace PaginaOnePiece
         get{return _InfoPersonaje;}
         set{_InfoPersonaje=value;}
     }
-      public int idBando
+      public int IdBando
     {
-        get{return _idBando;}
-        set{_idBando=value;}
+        get{return _IdBando;}
+        set{_IdBando=value;}
     }
-      public int idMar
+      public int IdMar
     {
-        get{return _idBando;}
-        set{_idBando=value;}
+        get{return _IdBando;}
+        set{_IdBando=value;}
     }
       public int Recompensa
     {
         get{return _Recompensa;}
         set{_Recompensa=value;}
     }
-       public int idTripulacion
+       public int IdTripulacion
     {
-        get{return _idTripulacion;}
-        set{_idTripulacion=value;}
+        get{return _IdTripulacion;}
+        set{_IdTripulacion=value;}
     }
 
-      public int idHakiRey
+      public int IdHakiRey
     {
-        get{return _idHakiRey;}
-        set{_idHakiRey=value;}
+        get{return _IdHakiRey;}
+        set{_IdHakiRey=value;}
     }
 
-       public int idHakiObservasion    
+       public int IdHakiObservasion    
     {
-        get{return _idHakiObservasion;}
-        set{_idHakiObservasion=value;}
+        get{return _IdHakiObservasion;}
+        set{_IdHakiObservasion=value;}
     }
 
-     public int idHakiArmadura
+     public int IdHakiArmadura
     {
-        get{return _idHakiArmadura;}
-        set{_idHakiArmadura=value;}
+        get{return _IdHakiArmadura;}
+        set{_IdHakiArmadura=value;}
     }
 
-          public int idRaza
+          public int IdRaza
     {
-        get{return _idRaza;}
-        set{_idRaza=value;}
+        get{return _IdRaza;}
+        set{_IdRaza=value;}
     }
  }
 

@@ -3,8 +3,8 @@ namespace PaginaOnePiece
 {
     public class Temporada
  {
-    private int _idTemporada;
-    private int _idMar;
+    private int _IdTemporada;
+    private int _IdMar;
 
     private string _NombreTemporada;
    
@@ -15,10 +15,10 @@ namespace PaginaOnePiece
 
       private int _Capitulos;
  
-    public Temporada(int idTemporada, int idMar, string NombreTemporada, DateTime FechaInicio, DateTime FechaFin, string InfoTemporada, int Capitulos)
+    public Temporada(int IdTemporada, int IdMar, string NombreTemporada, DateTime FechaInicio, DateTime FechaFin, string InfoTemporada, int Capitulos)
     {
-      _idTemporada=idTemporada;
-      _idMar=idMar;
+      _IdTemporada=IdTemporada;
+      _IdMar=IdMar;
       _NombreTemporada=NombreTemporada;
       _FechaInicio=FechaInicio;
       _FechaFin=FechaFin;
@@ -28,16 +28,16 @@ namespace PaginaOnePiece
     public Temporada()
     {}
 
-    public int idTemporada
+    public int IdTemporada
     {
-        get{return _idTemporada;}
-        set{_idTemporada=value;}
+        get{return _IdTemporada;}
+        set{_IdTemporada=value;}
     }
  
-    public int idMar
+    public int IdMar
     {
-        get{return _idMar;}
-        set{_idMar=value;}
+        get{return _IdMar;}
+        set{_IdMar=value;}
     }
     
     public string NombreTemporada
