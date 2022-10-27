@@ -17,6 +17,11 @@ public class HomeController : Controller
     {
         return View();
     }
+       public IActionResult Temporadas(int IdMar)
+    {
+        ViewBag.ListarTemporadas=BD.ListarTemporadasByID(IdMar);  
+        return View();
+    }
 
     public IActionResult Privacy()
     {

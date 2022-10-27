@@ -20,7 +20,6 @@ body {
 
 .InfoSerie
 {
-  height:auto;
  background-image: url("../../infoSerie.jfif"); 
   top: 20%;
   left: 0%;
@@ -30,7 +29,6 @@ body {
 }
 .poderes
 {
-  height:auto;
  background-image: url("../../infoSerie.jfif");
   bottom: 0%;
   left: 0%;
@@ -43,7 +41,7 @@ body {
   width: 25%;
   height:auto;
   background-image: url("../../infoSerie.jfif");
-  position: fixed;
+  position: absolute;
   bottom: 10%;
   right: 5%;
 }
@@ -64,7 +62,6 @@ body {
 
 .logo
 {
-  position: right 2%;
-  width: 10%;
+  width: 12%;
   height: auto;
 }

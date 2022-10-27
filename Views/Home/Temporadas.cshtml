@@ -1,0 +1,14 @@
+ 
+<body>
+@foreach (Temporada temporada in @ViewBag.ListarTemporadas)
+{
+    <div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="@temporada.Foto" alt="Card image cap">
+    <div class="card-body">
+    <h1 class="card-text">@temporada.NombreTemporada</h1>
+  </div>
+</div> 
+}
+</body>
+
+

@@ -32,7 +32,7 @@ function mostrarPersonajes(idT)
       personaje += element.nombre + "<br/>" + element.info + "<br/>" + element.raza ;
     });
     $("#Titulo").html("Personajes");
-    $("#DescripcionTemporada").html(personaje);
+    $("#DescripcionPersonaje").html(personaje);
    }
 })
 }
