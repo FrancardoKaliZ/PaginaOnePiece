@@ -8,13 +8,15 @@ namespace PaginaOnePiece
     private string _InfoPersonaje;
     private int _IdMar;
    private int _IdRaza;
+   private string _Foto;
  
-    public Personaje(int IdPersonaje, string NombrePersonaje, string InfoPersonaje, int IdMar, int IdRaza)
+    public Personaje(int IdPersonaje, string NombrePersonaje, string InfoPersonaje, int IdMar, int IdRaza, string Foto)
     {
       _IdPersonaje=IdPersonaje;
       _NombrePersonaje=NombrePersonaje;
       _InfoPersonaje=InfoPersonaje;
       _IdRaza = IdRaza;
+      _Foto=Foto;
     }
     public Personaje()
     {}
@@ -39,10 +41,15 @@ namespace PaginaOnePiece
         get{return _IdMar;}
         set{_IdMar=value;}
     }
-          public int IdRaza
+        public int IdRaza
     {
         get{return _IdRaza;}
         set{_IdRaza=value;}
+    }
+        public string Foto
+    {
+        get{return _Foto;}
+        set{_Foto=value;}
     }
  }
 

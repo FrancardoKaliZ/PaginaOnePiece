@@ -3,15 +3,15 @@ namespace PaginaOnePiece
 {
     public class Usuario
  {
-    private int _IDUsuario;
+    private int _IdUsuario;
     private string _NombreUsuario;
     private string _InfoUsuario;
     private string _Foto;
     private string _Contraseña;
 
-    public Usuario(int IDUsuario, string NombreUsuario, string InfoUsuario, string Foto, string Contraseña)
+    public Usuario(int IdUsuario, string NombreUsuario, string InfoUsuario, string Foto, string Contraseña)
     {
-      _IDUsuario=IDUsuario;
+      _IdUsuario=IdUsuario;
       _NombreUsuario=NombreUsuario;
       _InfoUsuario=InfoUsuario;
       _Foto=Foto;
@@ -20,10 +20,10 @@ namespace PaginaOnePiece
     public Usuario()
     {}
 
-    public int IDUsuario
+    public int IdUsuario
     {
-        get{return _IDUsuario;}
-        set{_IDUsuario=value;}
+        get{return _IdUsuario;}
+        set{_IdUsuario=value;}
     }
     
     public string NombreUsuario

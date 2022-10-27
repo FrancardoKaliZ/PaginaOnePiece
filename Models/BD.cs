@@ -76,28 +76,38 @@ namespace PaginaOnePiece
                 sql += "INNER JOIN HakiRey HR ON PxT.IdHakiRey = HR.IdHakiRey";
                 sql += "INNER JOIN Bando B ON PxT.IdBando = B.IdBando";
                 sql += "INNER JOIN Tripulacion T ON PxT.IdTripulacion = T.IdTripulacion";
-                sql += " WHERE P.IdPersonaje = @pIdPersonaje and PxT.IdTemporada = @pIdTemporada ";
+                sql += " WHERE PxT.IdTemporada = @pIdTemporada ";
                 _ListaPersonajesXTemporada = db.Query<PersonajeXTemporada>(sql, new{pIdTemporada = IdTemporada}).ToList();
             }
             return _ListaPersonajesXTemporada;
     }
-  }
         public static void AgregarTemporada(Temporada temp)
         {
             using (SqlConnection db = new SqlConnection(_connectionString))
             {
-                string sql = "INSERT INTO Temporada(NombreTemporada, FechaInicio, FechaFin, InfoTemporada, Capitulos) VALUES(NombreTemporada, FechaInicio, FechaFin, InfoTemporada, Capitulos)";
-                db.Execute(sql, new { NombreTemporada = temp.NombreTemporada, FechaInicio = temp.FechaInicio, FechaFin = temp.FechaFin, InfoTemporada = temp.InfoTemporada, capitulos = temp.Capitulos });
+                string sql = "INSERT INTO Temporada(NombreTemporada, FechaInicio, FechaFin, InfoTemporada, Capitulos, Foto) VALUES(@NombreTemporada, @FechaInicio, @FechaFin, @InfoTemporada, @Capitulos,@Foto)";
+                db.Execute(sql, new { NombreTemporada = temp.NombreTemporada, FechaInicio = temp.FechaInicio, FechaFin = temp.FechaFin, InfoTemporada = temp.InfoTemporada, Capitulos = temp.Capitulos, Foto = temp.Foto });
             }
         }
         public static void AgregarPersonaje(Personaje pers)
         {
             using (SqlConnection db = new SqlConnection(_connectionString))
             {
-                string sql = "INSERT INTO Personaje(NombrePersonaje,InfoPersonaje,IdMar,IdRaza) VALUES(NombrePersonaje,InfoPersonaje,IdMar,IdRaza)";
-                db.Execute(sql, new { NombrePersonaje = pers.NombrePersonaje, InfoPersonaje = pers.InfoPersonaje, IdMar = pers.IdMar, IdRaza = pers.IdRaza});
+                string sql = "INSERT INTO Personaje(NombrePersonaje,InfoPersonaje,IdMar,IdRaza,Foto) VALUES(@NombrePersonaje,@InfoPersonaje,@IdMar,@IdRaza,@Foto)";
+                db.Execute(sql, new { NombrePersonaje = pers.NombrePersonaje, InfoPersonaje = pers.InfoPersonaje, IdMar = pers.IdMar, IdRaza = pers.IdRaza, Foto = pers.Foto});
             }
         }
-
+        public static void AgregarPersonajeInfoXtemporada(PersonajeXTemporada personajeXt)
+        {
+            using (SqlConnection db = new SqlConnection(_connectionString))
+            {
+                string sql = "INSERT INTO PersonajeXTemporada(IdPersonaje,IdTemporada,IdBando,IdHakiArmadura,IdHakiObservacion,IdHakiRey,IdTripulacion) VALUES(@IdPersonaje,@IdTemporada,@IdBando,@IdHakiArmadura,@IdHakiObservacion,@IdHakiRey,@IdTripulacion)";
+                db.Execute(sql, new {IdPersonaje = personajeXt.IdPersonaje, IdTemporada = personajeXt.IdTemporada , IdBando = personajeXt.IdBando , IdHakiArmadura = personajeXt.IdHakiArmadura, IdHakiObservacion = personajeXt.IdHakiObservacion, IdHakiRey = personajeXt.IdHakiRey, IdTripulacion = personajeXt.IdTripulacion});
+            }
+        }
     }
+<<<<<<< HEAD
 */
+=======
+}
+>>>>>>> 5a0b36fb736f94412a7893e2fc7e95d943ecb95d

@@ -14,8 +14,10 @@ namespace PaginaOnePiece
      private string _InfoTemporada;
 
       private int _Capitulos;
+
+      private string _Foto;
  
-    public Temporada(int IdTemporada, int IdMar, string NombreTemporada, DateTime FechaInicio, DateTime FechaFin, string InfoTemporada, int Capitulos)
+    public Temporada(int IdTemporada, int IdMar, string NombreTemporada, DateTime FechaInicio, DateTime FechaFin, string InfoTemporada, int Capitulos, string Foto)
     {
       _IdTemporada=IdTemporada;
       _IdMar=IdMar;
@@ -24,6 +26,7 @@ namespace PaginaOnePiece
       _FechaFin=FechaFin;
       _InfoTemporada=InfoTemporada;
       _Capitulos=Capitulos;
+      _Foto = Foto;
     }
     public Temporada()
     {}
@@ -65,6 +68,11 @@ namespace PaginaOnePiece
     {
         get{return _Capitulos;}
         set{_Capitulos=value;}
+    }
+    public string Foto
+    {
+        get{return _Foto;}
+        set{_Foto=value;}
     }
     
  }
