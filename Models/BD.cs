@@ -20,7 +20,7 @@ namespace PaginaOnePiece
             using (SqlConnection db = new SqlConnection(_connectionString))
             {
                 string sql = "SELECT * FROM Temporada WHERE IdMar = @pIdMar";
-                _ListaTemporadas = db.Query<Actores>(sql, new { pIdMar = IdMar }).ToList();
+                _ListaTemporadas = db.Query<Temporada>(sql, new { pIdMar = IdMar }).ToList();
             }
             return _ListaTemporadas;
         }
@@ -43,17 +43,42 @@ namespace PaginaOnePiece
             }
             return _ListaMares;
         }
-        public static Personaje GetPersonajeByID(int IdPersonaje, int IdTemporada)
+        public static PersonajeXTemporada GetPersonajeByID(int IdPersonaje=null, int IdTemporada=null)
         {
-            Personaje miPersonaje = null;
+            PersonajeXTemporada miPersonaje = null;
             using(SqlConnection db = new SqlConnection(_connectionString))
             {
-                string sql = "SELECT * FROM Personaje P INNER JOIN PersonajeXTemporada PxT ON P.IdPersonaje = PxT.IdPersonaje INNER JOIN Raza R ON P.IdRaza = R.IdRaza INNER JOIN Mar M ON P.IdMar = M.IdMar WHERE P.IdPersonaje = @pIdPersonaje and PxT.IdTemporada = @pIdTemporada ";
-                miPersonaje = db.QueryFirstOrDefault<Personaje>(sql, new{pIdPersoanje = IdPersonaje, pIdTemporada = IdTemporada});
+                string sql = "SELECT PersonajeXTemporada.*, R.NombreRaza, P.*, M.NombreMar FROM Personaje P ";
+                sql += " INNER JOIN PersonajeXTemporada PxT ON P.IdPersonaje = PxT.IdPersonaje";
+                sql += " INNER JOIN Raza R ON P.IdRaza = R.IdRaza";
+                sql += " INNER JOIN Mar M ON P.IdMar = M.IdMar";
+                sql += "INNER JOIN HakiArmadura HA ON PxT.IdHakiArmadura = HA.IdHakiArmadura";
+                sql += "INNER JOIN HakiObservacion HO ON PxT.IdHakiObservacion = HO.IdHakiObservacion";
+                sql += "INNER JOIN HakiRey HR ON PxT.IdHakiRey = HR.IdHakiRey";
+                sql += "INNER JOIN Bando B ON PxT.IdBando = B.IdBando";
+                sql += "INNER JOIN Tripulacion T ON PxT.IdTripulacion = T.IdTripulacion";
+                sql += " WHERE P.IdPersonaje = @pIdPersonaje and PxT.IdTemporada = @pIdTemporada ";
+                miPersonaje = db.QueryFirstOrDefault<PersonajeXTemporada>(sql, new{pIdPersoanje = IdPersonaje, pIdTemporada = IdTemporada});
             }
             return miPersonaje;
-
     }
-
+        public static List<PersonajeXTemporada> ListarPersonajeXtemporada(int IdTemporada=null)
+        {
+            using(SqlConnection db = new SqlConnection(_connectionString))
+            {
+                string sql = "SELECT PersonajeXTemporada.*, R.NombreRaza, P.*, M.NombreMar FROM Personaje P ";
+                sql += " INNER JOIN PersonajeXTemporada PxT ON P.IdPersonaje = PxT.IdPersonaje";
+                sql += " INNER JOIN Raza R ON P.IdRaza = R.IdRaza";
+                sql += " INNER JOIN Mar M ON P.IdMar = M.IdMar";
+                sql += "INNER JOIN HakiArmadura HA ON PxT.IdHakiArmadura = HA.IdHakiArmadura";
+                sql += "INNER JOIN HakiObservacion HO ON PxT.IdHakiObservacion = HO.IdHakiObservacion";
+                sql += "INNER JOIN HakiRey HR ON PxT.IdHakiRey = HR.IdHakiRey";
+                sql += "INNER JOIN Bando B ON PxT.IdBando = B.IdBando";
+                sql += "INNER JOIN Tripulacion T ON PxT.IdTripulacion = T.IdTripulacion";
+                sql += " WHERE P.IdPersonaje = @pIdPersonaje and PxT.IdTemporada = @pIdTemporada ";
+                _ListaPersonajesXTemporada = db.Query<PersonajeXTemporada>(sql, new{pIdTemporada = IdTemporada}).ToList();
+            }
+            return _ListaPersonajesXTemporada;
+    }
   }
 } 

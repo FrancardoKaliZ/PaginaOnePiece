@@ -12,6 +12,16 @@ namespace PaginaOnePiece
        private int _IdTripulacion;
        private int _Recompensa;
 
+       public string NombrePersonaje{get;set;}
+       public string NombreRaza{get;set;}
+       public string NombreMar{get;set;}
+       public string EstadoHA{get;set;}
+       public string EstadoHO{get;set;}
+       public string EstadoHR{get;set;}
+       public string NombreBando{get;set;}
+       public string NombreTripulacion{get;set;}
+
+
     public PersonajeXTemporada(int IdPersonaje, int IdTemporada, int IdBando, int IdHakiArmadura, int IdHakiObservacion, int IdHakiRey, int IdTripulacion, int Recompensa) 
        {
         _IdPersonaje = IdPersonaje;
