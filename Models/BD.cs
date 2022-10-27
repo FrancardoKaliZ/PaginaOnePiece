@@ -46,14 +46,29 @@ namespace PaginaOnePiece
         public static Personaje GetPersonajeByID(int IdPersonaje, int IdTemporada)
         {
             Personaje miPersonaje = null;
-            using(SqlConnection db = new SqlConnection(_connectionString))
+            using (SqlConnection db = new SqlConnection(_connectionString))
             {
                 string sql = "SELECT * FROM Personaje P INNER JOIN PersonajeXTemporada PxT ON P.IdPersonaje = PxT.IdPersonaje INNER JOIN Raza R ON P.IdRaza = R.IdRaza INNER JOIN Mar M ON P.IdMar = M.IdMar WHERE P.IdPersonaje = @pIdPersonaje and PxT.IdTemporada = @pIdTemporada ";
-                miPersonaje = db.QueryFirstOrDefault<Personaje>(sql, new{pIdPersoanje = IdPersonaje, pIdTemporada = IdTemporada});
+                miPersonaje = db.QueryFirstOrDefault<Personaje>(sql, new { pIdPersoanje = IdPersonaje, pIdTemporada = IdTemporada });
             }
             return miPersonaje;
+        }
+        public static void AgregarTemporada(Temporada temp)
+        {
+            using (SqlConnection db = new SqlConnection(_connectionString))
+            {
+                string sql = "INSERT INTO Temporada(NombreTemporada, FechaInicio, FechaFin, InfoTemporada, Capitulos) VALUES(NombreTemporada, FechaInicio, FechaFin, InfoTemporada, Capitulos)";
+                db.Execute(sql, new { NombreTemporada = temp.NombreTemporada, FechaInicio = temp.FechaInicio, FechaFin = temp.FechaFin, InfoTemporada = temp.InfoTemporada, capitulos = temp.Capitulos });
+            }
+        }
+        public static void AgregarPersonaje(Personaje pers)
+        {
+            using (SqlConnection db = new SqlConnection(_connectionString))
+            {
+                string sql = "INSERT INTO Personaje(NombrePersonaje,InfoPersonaje,IdMar,IdRaza) VALUES(NombrePersonaje,InfoPersonaje,IdMar,IdRaza)";
+                db.Execute(sql, new { NombrePersonaje = pers.NombrePersonaje, InfoPersonaje = pers.InfoPersonaje, IdMar = Pers.IdMar, IdRaza = pers.IdRaza});
+            }
+        }
 
     }
-
-  }
-} 
+}
