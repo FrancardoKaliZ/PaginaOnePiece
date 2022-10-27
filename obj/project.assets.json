@@ -488,9 +488,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\46603069\\Desktop\\PaginaOnePiece\\PaginaOneiece.csproj",
-      "projectName": "PaginaOneiece",
-      "projectPath": "C:\\Users\\46603069\\Desktop\\PaginaOnePiece\\PaginaOneiece.csproj",
+      "projectUniqueName": "C:\\Users\\46603069\\Desktop\\PaginaOnePiece\\PaginaOnePiece.csproj",
+      "projectName": "PaginaOnePiece",
+      "projectPath": "C:\\Users\\46603069\\Desktop\\PaginaOnePiece\\PaginaOnePiece.csproj",
       "packagesPath": "C:\\Users\\46603069\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\46603069\\Desktop\\PaginaOnePiece\\obj\\",
       "projectStyle": "PackageReference",

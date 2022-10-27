@@ -8,7 +8,7 @@ namespace PaginaOnePiece
 {
     public static class BD
     {
-        private static string _connectionString = @"Server=DESKTOP-C3LD3QR\SQLEXPRESS;DataBase = OnePiece;Trusted_Connection=True;";
+        private static string _connectionString = @"Server=A-PHZ2-CIDI-050\SQLEXPRESS;DataBase = OnePiece;Trusted_Connection=True;";
         private static List<PersonajeXTemporada> _ListaPersonajesXTemporada = new List<PersonajeXTemporada>();
         private static List<Temporada> _ListaTemporadas = new List<Temporada>();
         private static List<Mar> _ListaMares = new List<Mar>();
@@ -20,7 +20,7 @@ namespace PaginaOnePiece
             using (SqlConnection db = new SqlConnection(_connectionString))
             {
                 string sql = "SELECT * FROM Temporada WHERE IdMar = @pIdMar";
-                _ListaTemporadas = db.Query<Actores>(sql, new { pIdMar = IdMar }).ToList();
+                _ListaTemporadas = db.Query<Temporada>(sql, new { pIdMar = IdMar }).ToList();
             }
             return _ListaTemporadas;
         }
@@ -66,7 +66,7 @@ namespace PaginaOnePiece
             using (SqlConnection db = new SqlConnection(_connectionString))
             {
                 string sql = "INSERT INTO Personaje(NombrePersonaje,InfoPersonaje,IdMar,IdRaza) VALUES(NombrePersonaje,InfoPersonaje,IdMar,IdRaza)";
-                db.Execute(sql, new { NombrePersonaje = pers.NombrePersonaje, InfoPersonaje = pers.InfoPersonaje, IdMar = Pers.IdMar, IdRaza = pers.IdRaza});
+                db.Execute(sql, new { NombrePersonaje = pers.NombrePersonaje, InfoPersonaje = pers.InfoPersonaje, IdMar = pers.IdMar, IdRaza = pers.IdRaza});
             }
         }
 
