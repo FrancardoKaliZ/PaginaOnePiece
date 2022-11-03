@@ -18,12 +18,12 @@ public class HomeController : Controller
         ViewBag.ListaMares = BD.ListarMares();
         return View();
     }
-       public IActionResult TemporadasById(int IdMar)
+    public IActionResult TemporadasById(int IdMar)
     {
-        ViewBag.ListaTemporadasById=BD.ListarTemporadasById(IdMar);  
+        ViewBag.ListaTemporadasById = BD.ListarTemporadasById(IdMar);
         return View();
     }
-        public IActionResult Temporadas()
+    public IActionResult Temporadas()
     {
         ViewBag.ListaTemporadas = BD.ListarTemporadas();
         return View();
@@ -33,11 +33,17 @@ public class HomeController : Controller
     {
         return BD.verDetalleTemporada(IdTemporada);
     }
-    public List<PersonajeXTemporada> verPersonajesAjax(int IdTemporada)
+    public JsonResult verPersonajesAjax(int IdTemporada)
     {
-         return BD.ListarPersonajeXtemporada(IdTemporada);
+        List<PersonajeXTemporada> listaPersonajes = BD.ListarPersonajeXtemporada(IdTemporada);
+        List<Personaje> infoxPersonaje = new List<Personaje>();
+        foreach(PersonajeXTemporada personajextemporada in listaPersonajes)
+        {
+            infoxPersonaje.Add(BD.verDetallePersonaje(personajextemporada.IdPersonaje));
+        }
+        return Json(new{listaPersonajes, infoxPersonaje});
     }
-    
+
     public IActionResult Privacy()
     {
         return View();

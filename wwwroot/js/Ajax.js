@@ -27,10 +27,12 @@ function mostrarPersonajes(idT)
    success:
    function (response)
    {
-    var actor = "";
-    response.forEach(element => {
-      personaje += element.nombre + "<br/>" + element.info + "<br/>" + element.raza ;
-    });
+    console.log(response);
+    var personaje = "";
+    for(let i = 0; i < response.infoxPersonaje.length; i++)
+    {
+      personaje += "Nombre: " + response.infoxPersonaje[i].nombrePersonaje + "<br/>" + "Recompensa: " + response.listaPersonajes[i].recompensa + "<br/>" + "Haki de Armadura: " + response.listaPersonajes[i].estadoHA;
+    }
     $("#Titulo").html("Personajes");
     $("#DescripcionTemporada").html(personaje);
    }
