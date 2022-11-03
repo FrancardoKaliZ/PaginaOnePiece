@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using PaginaOneiece.Models;
+using PaginaOnePiece.Models;
 
 namespace PaginaOnePiece.Controllers;
 

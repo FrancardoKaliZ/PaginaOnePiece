@@ -20,7 +20,7 @@ namespace PaginaOnePiece
         get{return _IdHakiArmadura;}
         set{_IdHakiArmadura=value;}
     }
-        public int EstadoHA
+        public string EstadoHA
     {
         get{return _EstadoHA;}
         set{_EstadoHA=value;}
