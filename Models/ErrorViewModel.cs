@@ -1,4 +1,4 @@
-namespace PaginaOneiece.Models;
+namespace PaginaOnePiece.Models;
 
 public class ErrorViewModel
 {

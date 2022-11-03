@@ -1,7 +1,6 @@
 using System;
-namespace PaginaOnePiece
-{
-    public class Temporada
+namespace PaginaOnePiece.Models;
+public class Temporada
  {
     private int _IdTemporada;
     private int _IdMar;
@@ -76,7 +75,5 @@ namespace PaginaOnePiece
     }
     
  }
-
-}
 
 
