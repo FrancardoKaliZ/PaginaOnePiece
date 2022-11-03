@@ -4,13 +4,13 @@
  {
    type: 'POST',
    dataType: 'JSON',
-   url: 'HOME/verInformacionAjax',
+   url: '/Home/mostrarInfoTemporadaAjax',
    data: {idTemporada: idT},
    success:
    function (response)
    {
     $("#Titulo").html("Informacion de la temporada");
-    $("#DescripcionTemporada").html(response.nombre + "<br>" + response.fechaInicio + "<br>" + response.fehcaFin + "<br>" + response.infoTemporada + "<br>" + response.capitulos);
+    $("#DescripcionTemporada").html(response.nombreTemporada + "<br>" + response.fechaInicio.substr(0, 10) + "<br>" + response.fechaFin.substr(0,10) + "<br>" + response.infoTemporada + "<br>" + "capitulos: " + response.capitulos);
 
    }
 });
@@ -22,7 +22,7 @@ function mostrarPersonajes(idT)
  {
    type: 'POST',
    dataType: 'JSON',
-   url: 'HOME/verPersonajesAjax',
+   url: '/Home/verPersonajesAjax',
    data: {idTemporada: idT},
    success:
    function (response)

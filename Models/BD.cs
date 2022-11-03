@@ -128,10 +128,21 @@ namespace PaginaOnePiece.Models;
 
           public static void EliminarTemporada(int IdTemporada)
         {
-            string sql= "DELETE FROM Temporadas WHERE idTemporada = @PIdTemporada";
+            string sql= "DELETE FROM Temporada WHERE idTemporada = @PIdTemporada";
             using(SqlConnection db = new SqlConnection(_connectionString))
             {
                db.Execute(sql, new{PIdTemporada =IdTemporada });
             }
+        }
+
+            public static Temporada verDetalleTemporada(int IdTemporada)
+        {
+            Temporada miTemporada = null;
+            using(SqlConnection db = new SqlConnection(_connectionString))
+            {
+                string sql = "SELECT * FROM Temporada WHERE IdTemporada = @PIdTemporada";
+                miTemporada = db.QueryFirstOrDefault<Temporada>(sql, new{PIdTemporada= IdTemporada});
+            }
+            return miTemporada;
         }
     }

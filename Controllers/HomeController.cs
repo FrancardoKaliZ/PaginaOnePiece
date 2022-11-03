@@ -15,8 +15,8 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        return View();
         ViewBag.ListaMares = BD.ListarMares();
+        return View();
     }
        public IActionResult TemporadasById(int IdMar)
     {
@@ -29,6 +29,15 @@ public class HomeController : Controller
         return View();
     }
 
+    public Temporada mostrarInfoTemporadaAjax(int IdTemporada)
+    {
+        return BD.verDetalleTemporada(IdTemporada);
+    }
+    public List<PersonajeXTemporada> verPersonajesAjax(int IdTemporada)
+    {
+         return BD.ListarPersonajeXtemporada(IdTemporada);
+    }
+    
     public IActionResult Privacy()
     {
         return View();
