@@ -9,7 +9,11 @@ namespace PaginaOnePiece.Models;
 
     public static class BD
     {
+<<<<<<< HEAD
+        private static string _connectionString = @"Server=A-PHZ2-CIDI-033\SQLEXPRESS;DataBase = OnePiece;Trusted_Connection=True;";
+=======
         private static string _connectionString = @"Server=A-PHZ2-CIDI-034\;DataBase=OnePiece;Trusted_Connection=True;";
+>>>>>>> abd4a477fae3bbaed94844148c63177c628a5f1a
         private static List<PersonajeXTemporada> _ListaPersonajesXTemporada = new List<PersonajeXTemporada>();
         private static List<Temporada> _ListaTemporadas = new List<Temporada>();
         private static List<Temporada> _ListaTemporadasById = new List<Temporada>();
