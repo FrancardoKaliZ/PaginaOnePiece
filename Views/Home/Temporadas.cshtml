@@ -5,7 +5,28 @@
     <img class="card-img-top" src="@temporada.Foto" alt="Card image cap">
     <div class="card-body">
     <h1 class="card-text">@temporada.NombreTemporada</h1>
+     <button type="button" class="btn btn-success" data-toggle="modal" data-target="#ModalTeporada" onclick="mostrarInfoTemporada(@temporada.IdTemporada)">Mas info</button>
+     <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#ModalTeporada" onclick="mostrarPersonajes(@Temporada.IdTemporada)">Personajes</button>
   </div>
 </div> 
 }
+<div class="modal fade" id="ModalTemporada" tabindex="-1" role="dialog" aria-labelledby="ModalTeporada" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="Titulo"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id ="DescripcionTemporada">
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 </body>
