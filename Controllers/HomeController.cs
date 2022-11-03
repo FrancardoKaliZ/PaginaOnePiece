@@ -17,11 +17,15 @@ public class HomeController : Controller
     {
         return View();
         ViewBag.ListaMares = BD.ListarMares();
-        ViewBag.ListaTemporadas = BD.ListarTemporadas();
     }
        public IActionResult TemporadasById(int IdMar)
     {
         ViewBag.ListaTemporadasById=BD.ListarTemporadasById(IdMar);  
+        return View();
+    }
+        public IActionResult Temporadas()
+    {
+        ViewBag.ListaTemporadas = BD.ListarTemporadas();
         return View();
     }
 

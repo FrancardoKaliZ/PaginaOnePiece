@@ -117,5 +117,22 @@ namespace PaginaOnePiece
                 db.Execute(sql, new {IdPersonaje = personajeXt.IdPersonaje, IdTemporada = personajeXt.IdTemporada , IdBando = personajeXt.IdBando , IdHakiArmadura = personajeXt.IdHakiArmadura, IdHakiObservacion = personajeXt.IdHakiObservacion, IdHakiRey = personajeXt.IdHakiRey, IdTripulacion = personajeXt.IdTripulacion});
             }
         }
+         public static void EliminarPersonaje(int IdPersonaje)
+        {
+            string sql= "DELETE FROM Personajes WHERE idPErsonaje = @PIdPersonaje";
+            using(SqlConnection db = new SqlConnection(_connectionString))
+            {
+               db.Execute(sql, new{PIdPersonaje =IdPersonaje });
+            }
+        }
+
+          public static void EliminarTemporada(int IdTemporada)
+        {
+            string sql= "DELETE FROM Temporadas WHERE idTemporada = @PIdTemporada";
+            using(SqlConnection db = new SqlConnection(_connectionString))
+            {
+               db.Execute(sql, new{PIdTemporada =IdTemporada });
+            }
+        }
     }
 }
