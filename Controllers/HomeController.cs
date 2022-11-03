@@ -16,10 +16,12 @@ public class HomeController : Controller
     public IActionResult Index()
     {
         return View();
+        ViewBag.ListaMares = BD.ListarMares();
+        ViewBag.ListaTemporadas = BD.ListarTemporadas();
     }
-       public IActionResult Temporadas(int IdMar)
+       public IActionResult TemporadasById(int IdMar)
     {
-        ViewBag.ListarTemporadas=BD.ListarTemporadasByID(IdMar);  
+        ViewBag.ListaTemporadasById=BD.ListarTemporadasById(IdMar);  
         return View();
     }
 

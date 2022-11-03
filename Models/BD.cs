@@ -1,4 +1,4 @@
-/*
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,18 +12,29 @@ namespace PaginaOnePiece
         private static string _connectionString = @"Server=A-PHZ2-CIDI-050\SQLEXPRESS;DataBase = OnePiece;Trusted_Connection=True;";
         private static List<PersonajeXTemporada> _ListaPersonajesXTemporada = new List<PersonajeXTemporada>();
         private static List<Temporada> _ListaTemporadas = new List<Temporada>();
+        private static List<Temporada> _ListaTemporadasById = new List<Temporada>();
         private static List<Mar> _ListaMares = new List<Mar>();
         private static List<Personaje> _ListaPersonajes = new List<Personaje>();
 
 
-        public static List<Temporada> ListarTemporadasByID(int IdMar)
+            public static List<Temporada> ListarTemporadas()
+        {
+            using (SqlConnection db = new SqlConnection(_connectionString))
+            {
+                string sql = "SELECT * FROM Temporada" ;
+                _ListaTemporadas = db.Query<Temporada>(sql).ToList();
+            }
+            return _ListaTemporadas;
+        }
+
+        public static List<Temporada> ListarTemporadasById(int IdMar)
         {
             using (SqlConnection db = new SqlConnection(_connectionString))
             {
                 string sql = "SELECT * FROM Temporada WHERE IdMar = @pIdMar";
-                _ListaTemporadas = db.Query<Temporada>(sql, new { pIdMar = IdMar }).ToList();
+                _ListaTemporadasById = db.Query<Temporada>(sql, new { pIdMar = IdMar }).ToList();
             }
-            return _ListaTemporadas;
+            return _ListaTemporadasById;
         }
 
         public static List<Personaje> ListarPersonajes()
@@ -44,7 +55,8 @@ namespace PaginaOnePiece
             }
             return _ListaMares;
         }
-        public static PersonajeXTemporada GetPersonajeByID(int IdPersonaje=null, int IdTemporada=null)
+        
+        public static PersonajeXTemporada GetPersonajeByID(int IdPersonaje, int IdTemporada)
         {
             PersonajeXTemporada miPersonaje = null;
             using(SqlConnection db = new SqlConnection(_connectionString))
@@ -63,7 +75,7 @@ namespace PaginaOnePiece
             }
             return miPersonaje;
     }
-        public static List<PersonajeXTemporada> ListarPersonajeXtemporada(int IdTemporada=null)
+        public static List<PersonajeXTemporada> ListarPersonajeXtemporada(int IdTemporada)
         {
             using(SqlConnection db = new SqlConnection(_connectionString))
             {
@@ -106,8 +118,4 @@ namespace PaginaOnePiece
             }
         }
     }
-<<<<<<< HEAD
-*/
-=======
 }
->>>>>>> 5a0b36fb736f94412a7893e2fc7e95d943ecb95d

@@ -27,11 +27,6 @@ namespace PaginaOnePiece
         get{return _NombreTripulacion;}
         set{_NombreTripulacion=value;}
     }
-        public string NombreTripulacion
-    {
-        get{return _NombreTripulacion;}
-        set{_NombreTripulacion=value;}
-    }
         public string Foto
     {
         get{return _Foto;}

@@ -32,3 +32,14 @@ C:\Users\46603069\Desktop\PaginaOnePiece\obj\Debug\net6.0\refint\PaginaOnePiece.
 C:\Users\46603069\Desktop\PaginaOnePiece\obj\Debug\net6.0\PaginaOnePiece.pdb
 C:\Users\46603069\Desktop\PaginaOnePiece\obj\Debug\net6.0\PaginaOnePiece.genruntimeconfig.cache
 C:\Users\46603069\Desktop\PaginaOnePiece\obj\Debug\net6.0\ref\PaginaOnePiece.dll
+C:\Users\46916289\Desktop\PaginaOnePiece\PaginaOnePiece\obj\Debug\net6.0\PaginaOnePiece.csproj.AssemblyReference.cache
+C:\Users\46916289\Desktop\PaginaOnePiece\PaginaOnePiece\obj\Debug\net6.0\PaginaOnePiece.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\46916289\Desktop\PaginaOnePiece\PaginaOnePiece\obj\Debug\net6.0\PaginaOnePiece.AssemblyInfoInputs.cache
+C:\Users\46916289\Desktop\PaginaOnePiece\PaginaOnePiece\obj\Debug\net6.0\PaginaOnePiece.AssemblyInfo.cs
+C:\Users\46916289\Desktop\PaginaOnePiece\PaginaOnePiece\obj\Debug\net6.0\PaginaOnePiece.csproj.CoreCompileInputs.cache
+C:\Users\46916289\Desktop\PaginaOnePiece\PaginaOnePiece\obj\Debug\net6.0\PaginaOnePiece.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\46916289\Desktop\PaginaOnePiece\PaginaOnePiece\obj\Debug\net6.0\PaginaOnePiece.RazorAssemblyInfo.cache
+C:\Users\46916289\Desktop\PaginaOnePiece\PaginaOnePiece\obj\Debug\net6.0\PaginaOnePiece.RazorAssemblyInfo.cs
+C:\Users\46916289\Desktop\PaginaOnePiece\PaginaOnePiece\obj\Debug\net6.0\PaginaOnePiece.dll
+C:\Users\46916289\Desktop\PaginaOnePiece\PaginaOnePiece\obj\Debug\net6.0\refint\PaginaOnePiece.dll
+C:\Users\46916289\Desktop\PaginaOnePiece\PaginaOnePiece\obj\Debug\net6.0\PaginaOnePiece.pdb
