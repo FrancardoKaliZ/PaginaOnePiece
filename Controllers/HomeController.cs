@@ -43,6 +43,11 @@ public class HomeController : Controller
         }
         return Json(new{listaPersonajes, infoxPersonaje});
     }
+        public IActionResult EliminarTemporada(int IdTemporada)
+    {
+        BD.EliminarTemporada(IdTemporada);
+        return View("Temporadas");
+    }
 
     public IActionResult Privacy()
     {

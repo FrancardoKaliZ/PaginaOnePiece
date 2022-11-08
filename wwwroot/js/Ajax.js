@@ -10,7 +10,7 @@
    function (response)
    {
     $("#Titulo").html("Informacion de la temporada");
-    $("#DescripcionTemporada").html(response.nombreTemporada + "<br>" + response.fechaInicio.substr(0, 10) + "<br>" + response.fechaFin.substr(0,10) + "<br>" + response.infoTemporada + "<br>" + "capitulos: " + response.capitulos);
+    $("#DescripcionTemporada").html("<b>Nombre: </b> "+ response.nombreTemporada + "<br>" + "<b>Fecha inicio:</b> " + response.fechaInicio.substr(0, 10) + "<br>" + "<b>Fecha fin:</b> " + response.fechaFin.substr(0,10) + "<br>" + "<b>Info temporada:</b> " + response.infoTemporada + "<br>" + "<b>capitulos:</b> " + response.capitulos);
 
    }
 });
@@ -27,11 +27,12 @@ function mostrarPersonajes(idT)
    success:
    function (response)
    {
-    console.log(response);
     var personaje = "";
     for(let i = 0; i < response.infoxPersonaje.length; i++)
     {
-      personaje += "Nombre: " + response.infoxPersonaje[i].nombrePersonaje + "<br/>" + "Recompensa: " + response.listaPersonajes[i].recompensa + "<br/>" + "Haki de Armadura: " + response.listaPersonajes[i].estadoHA;
+      personaje += "<b>Nombre:</b> " + response.infoxPersonaje[i].nombrePersonaje + "<br/>" + "<b>Recompensa:</b> " + response.listaPersonajes[i].recompensa + "<br/>" + "<b>Haki de Armadura:</b> " + response.listaPersonajes[i].estadoHA +"<br/>"+ "<b>Haki de observacion:</b> " + response.listaPersonajes[i].estadoHO+"<br/>"+ "<b>Haki del rey:</b> " + response.listaPersonajes[i].estadoHR
+      +response.infoxPersonaje[i].foto
+      ;
     }
     $("#Titulo").html("Personajes");
     $("#DescripcionTemporada").html(personaje);

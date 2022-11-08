@@ -2,15 +2,16 @@
 @foreach (Temporada temporada in @ViewBag.ListaTemporadas)
 {
     <div class="card" style="width: 18rem;">
-    <img class="card-img-top" src="@temporada.Foto" alt="Card image cap">
+    <img class="card-img-top" src="/@temporada.Foto" alt="Card image cap">
     <div class="card-body">
-    <h1 class="card-text">@temporada.NombreTemporada</h1>
-     <button type="button" class="btn btn-success" data-toggle="modal" data-target="#ModalTemporada" onclick="mostrarInfoTemporada(@temporada.IdTemporada)">Mas info</button>
+    <h3 class="card-text">@temporada.NombreTemporada</h3>
+     <button type="button" class="btn btn-success" data-toggle="modal" data-target="#ModalTemporada" onclick="mostrarInfoTemporada(@temporada.IdTemporada)">Info</button>
      <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#ModalTemporada" onclick="mostrarPersonajes(@temporada.IdTemporada)">Personajes</button>
+     <a class="btn btn-danger" href='@Url.Action("EliminarTemporada","Home", new{IdTemporada=@temporada.IdTemporada})'>Eliminar</a>
   </div>
 </div> 
 }
-<div class="modal fade" id="ModalTemporada" tabindex="-1" role="dialog" aria-labelledby="ModalTeporada" aria-hidden="true">
+<div class="modal fade" id="ModalTemporada" tabindex="-1" role="dialog" aria-labelledby="ModalTemporada" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
