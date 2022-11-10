@@ -37,18 +37,46 @@ public class HomeController : Controller
     {
         List<PersonajeXTemporada> listaPersonajes = BD.ListarPersonajeXtemporada(IdTemporada);
         List<Personaje> infoxPersonaje = new List<Personaje>();
-        foreach(PersonajeXTemporada personajextemporada in listaPersonajes)
+        foreach (PersonajeXTemporada personajextemporada in listaPersonajes)
         {
             infoxPersonaje.Add(BD.verDetallePersonaje(personajextemporada.IdPersonaje));
         }
-        return Json(new{listaPersonajes, infoxPersonaje});
+        return Json(new { listaPersonajes, infoxPersonaje });
     }
-        public IActionResult EliminarTemporada(int IdTemporada)
+    public IActionResult EliminarTemporada(int IdTemporada)
     {
         BD.EliminarTemporada(IdTemporada);
+        return RedirectToAction("Temporadas", "Home");
+    }
+
+    public IActionResult EliminarPersonaje(int IdTemporada)
+    {
+        BD.EliminarPersonaje(IdTemporada);
         return View("Temporadas");
     }
 
+    public IActionResult AgregarTemporada()
+    {   
+        return View("AgregarTemporada");
+    }
+    [HttpPost]
+    public IActionResult GuardarTemporada()
+    {
+        ViewBag.ListaTemporadas = BD.ListarTemporadas();
+        return View("Temporadas");
+    }
+    public IActionResult agregarPersonaje(int IdTemporada)
+    {
+        ViewBag.IdTemporada = IdTemporada;
+        return View("AgregarPersonaje");
+    }
+    [HttpPost]
+    public IActionResult guardarPersonaje(PersonajeXTemporada per)
+    {
+        ViewBag.ListaTemporadas = BD.ListarTemporadas();
+        ViewBag.listaPersonajes = BD.ListarPersonajes();
+        return View("Temporadas");
+    }
     public IActionResult Privacy()
     {
         return View();
