@@ -57,12 +57,22 @@ public class HomeController : Controller
 
     public IActionResult AgregarTemporada()
     {   
+        ViewBag.ListaMares = BD.ListarMares();
         return View("AgregarTemporada");
     }
     [HttpPost]
-    public IActionResult GuardarTemporada()
+    public IActionResult GuardarTemporada(Temporada temp, IFormFile file)
     {
+        BD.AgregarTemporada(temp);
         ViewBag.ListaTemporadas = BD.ListarTemporadas();
+        if(file.lenght>0)
+        {
+            string wwwRootLocal =this.Enviroment.ContentRootPath + @"\wwwroot\" + file.FileName;
+            using (var Stream =System.IO.File.Create(wwwRootLocal))
+            {
+                file.CopyToAsync(Stream);
+            }
+        }
         return View("Temporadas");
     }
     public IActionResult agregarPersonaje(int IdTemporada)

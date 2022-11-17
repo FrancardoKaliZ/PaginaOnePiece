@@ -28,7 +28,14 @@
         <input type="file" name="Foto" />
         <br>
         <br>
+
         <div class="form-text">
+            <select name="IdMar">
+                 @foreach (Mar item in ViewBag.ListaMares)
+                 {
+                    <option value="@item.IdMar">@item.NombreMar</option>
+            }
+            </select>
         </div>
         <input type="hidden" name="IdTemporada" value="@ViewBag.IdTemporada">
         <input type="submit" value="Submit">
