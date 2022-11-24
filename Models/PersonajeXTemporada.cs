@@ -13,6 +13,7 @@ namespace PaginaOnePiece
        private int _Recompensa;
 
        public string NombrePersonaje{get;set;}
+       public string InfoPersonaje{get;set;}
        public string EstadoHA{get;set;}
        public string EstadoHO{get;set;}
        public string EstadoHR{get;set;}

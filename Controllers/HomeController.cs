@@ -1,16 +1,18 @@
 ﻿using System.Diagnostics;
+using System.IO;
 using Microsoft.AspNetCore.Mvc;
 using PaginaOnePiece.Models;
+using Microsoft.AspNetCore.Hosting;
 
 namespace PaginaOnePiece.Controllers;
 
 public class HomeController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
+    private IWebHostEnvironment Environment;
 
-    public HomeController(ILogger<HomeController> logger)
+    public HomeController(IWebHostEnvironment environment)
     {
-        _logger = logger;
+        Environment = environment;
     }
 
     public IActionResult Index()
@@ -43,6 +45,11 @@ public class HomeController : Controller
         }
         return Json(new { listaPersonajes, infoxPersonaje });
     }
+
+    public PersonajeXTemporada verPersonajeInfo(int IdPersonaje)
+    {
+        return BD.GetPersonajeByIDNoTemp(IdPersonaje);
+    }
     public IActionResult EliminarTemporada(int IdTemporada)
     {
         BD.EliminarTemporada(IdTemporada);
@@ -65,10 +72,10 @@ public class HomeController : Controller
     {
         BD.AgregarTemporada(temp);
         ViewBag.ListaTemporadas = BD.ListarTemporadas();
-        if(file.lenght>0)
+        if(file.Length>0)
         {
-            string wwwRootLocal =this.Enviroment.ContentRootPath + @"\wwwroot\" + file.FileName;
-            using (var Stream =System.IO.File.Create(wwwRootLocal))
+            string wwwRootLocal =this.Environment.ContentRootPath + @"\wwwroot\" + file.FileName;
+            using (var Stream=System.IO.File.Create(wwwRootLocal))
             {
                 file.CopyToAsync(Stream);
             }

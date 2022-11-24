@@ -22,20 +22,47 @@ function mostrarPersonajes(idT)
  {
    type: 'POST',
    dataType: 'JSON',
-   url: '/Home/verPersonajesAjax',
+   url: '/Home/verPersonajesAjax',  
    data: {idTemporada: idT},
    success:
    function (response)
    {
-    var personaje = "";
+    let cards = "";
     for(let i = 0; i < response.infoxPersonaje.length; i++)
     {
-      personaje += "<b>Nombre:</b> " + response.infoxPersonaje[i].nombrePersonaje + "<br/>" + "<b>Recompensa:</b> " + response.listaPersonajes[i].recompensa + "<br/>" + "<b>Haki de Armadura:</b> " + response.listaPersonajes[i].estadoHA +"<br/>"+ "<b>Haki de observacion:</b> " + response.listaPersonajes[i].estadoHO+"<br/>"+ "<b>Haki del rey:</b> " + response.listaPersonajes[i].estadoHR
-      +response.infoxPersonaje[i].foto
-      ;
-    }
+      cards += "<div class='card text-center border-dark mb-3' style='width: 18rem;' id='CardPersonajes'>"+
+                  "<img src='/"+response.infoxPersonaje[i].foto+"' class='card-img-top' alt='...' id='imgPersonaje'>"+
+                  "<p>______________________________________</p>"+
+                  "<div class='card-body'>"+
+                    "<h4 class='card-title' id='recompensa'> $"+response.listaPersonajes[i].recompensa+"</h4>"+
+                    "<p>______________________________________</p>"+
+                    "<p class='card-text'>" +response.infoxPersonaje[i].nombrePersonaje +"</p>"+
+                    "<button type='button' class='btn btn-primary' onclick='mostrarInfoPersonaje("+response.infoxPersonaje[i].idPersonaje+")'>"+"Más Info"+"</button>"
+                  "</div>"+
+                "</div>";
+          "<a href=/Home/AgregarPersonaje?IdPersonaje="+idT.toString()+" class='btn btn-primary'>Agregar Personaje</a>";
     $("#Titulo").html("Personajes");
-    $("#DescripcionTemporada").html(personaje);
+    $("#DescripcionTemporada").html(cards);
    }
-})
+}});
+
+}
+function mostrarInfoPersonaje(idP)
+{
+ $.ajax(
+ {
+   type: 'POST',
+   dataType: 'JSON',
+   url: '/Home/verPersonajeInfo',
+   data: {idPersonaje: idP},
+   success:
+   function (response)
+   {
+
+
+    $("#Titulo").html(response.nombrePersonaje);
+    $("#DescripcionTemporada").html("<b>Haki de Armadura:</b>" + response.estadoHA +"<br/>"+ "<b>Haki de observacion:</b> " + response.estadoHO+"<br/>"+ "<b>Haki del rey:</b> " + response.estadoHR + "<br/>" + "<b>Info personaje:</b>"+ response.infoPersonaje);
+
+   }
+});
 }
