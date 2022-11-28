@@ -17,8 +17,7 @@
             name="FechaFin">
         <br>
         <label for="inputPassword5" class="form-label">Info de la temporada</label>
-        <input type="text" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock"
-            name="InfoTemporada">
+       <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="InfoTemporada"></textarea>
         <br>
         <label for="inputPassword5" class="form-label">Capitulos</label>
         <input type="text" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock"
@@ -29,7 +28,8 @@
         <br>
         <br>
 
-        <div class="form-text">
+    <label for="exampleFormControlSelect1">Donde se lleva a cabo la temporada</label>
+        <div class="form-text" id="exampleFormControlSelect1">
             <select name="IdMar">
                  @foreach (Mar item in ViewBag.ListaMares)
                  {

@@ -82,16 +82,32 @@ public class HomeController : Controller
         }
         return View("Temporadas");
     }
-    public IActionResult agregarPersonaje(int IdTemporada)
+    public IActionResult AgregarPersonaje(int IdTemporada)
     {
+        ViewBag.ListaMares = BD.ListarMares();;
+        ViewBag.ListaRazas =  BD.ListarRazas();
+        ViewBag.ListaBandos =  BD.ListarBandos();
+        ViewBag.ListaHakiA = BD.ListarHakiA();
+        ViewBag.ListaHakiO = BD.ListarHakiO();
+        ViewBag.ListaHakiR = BD.ListarHakiR();
         ViewBag.IdTemporada = IdTemporada;
         return View("AgregarPersonaje");
     }
     [HttpPost]
-    public IActionResult guardarPersonaje(PersonajeXTemporada per)
+    public IActionResult GuardarPersonaje(Personaje personaje,PersonajeXTemporada per, IFormFile file)
     {
+        BD.AgregarPersonaje(personaje);
+        BD.AgregarPersonajeInfoXtemporada(per);
         ViewBag.ListaTemporadas = BD.ListarTemporadas();
         ViewBag.listaPersonajes = BD.ListarPersonajes();
+        if(file.Length>0)
+        {
+            string wwwRootLocal =this.Environment.ContentRootPath + @"\wwwroot\" + file.FileName;
+            using (var Stream=System.IO.File.Create(wwwRootLocal))
+            {
+                file.CopyToAsync(Stream);
+            }
+        }
         return View("Temporadas");
     }
     public IActionResult Privacy()

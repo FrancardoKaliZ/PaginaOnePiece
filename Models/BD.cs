@@ -9,14 +9,18 @@ namespace PaginaOnePiece.Models;
 
     public static class BD
     {
-        private static string _connectionString = @"Server=A-PHZ2-CIDI-031\;DataBase=OnePiece;Trusted_Connection=True;";
+        private static string _connectionString = @"Server=DESKTOP-8FIRVQB\SQLEXPRESS;DataBase=OnePiece;Trusted_Connection=True;";
         private static List<PersonajeXTemporada> _ListaPersonajesXTemporada = new List<PersonajeXTemporada>();
         private static List<Temporada> _ListaTemporadas = new List<Temporada>();
         private static List<Temporada> _ListaTemporadasById = new List<Temporada>();
         private static List<Mar> _ListaMares = new List<Mar>();
         private static List<Personaje> _ListaPersonajes = new List<Personaje>();
-
-
+        private static List<Raza> _ListaRazas = new List<Raza>();
+        private static List<Bando> _ListaBandos = new List<Bando>();
+        private static List<HakiArmadura> _ListaHakiArmadura = new List<HakiArmadura>();
+        private static List<HakiObservacion> _ListaHakiObservacion = new List<HakiObservacion>();
+        private static List<HakiRey> _ListaHakiRey = new List<HakiRey>();
+        
             public static List<Temporada> ListarTemporadas()
         {
             using (SqlConnection db = new SqlConnection(_connectionString))
@@ -56,7 +60,51 @@ namespace PaginaOnePiece.Models;
             }
             return _ListaMares;
         }
-        
+         public static List<Raza> ListarRazas()
+        {
+            using (SqlConnection db = new SqlConnection(_connectionString))
+            {
+                string sql = "SELECT * FROM Raza";
+                _ListaRazas = db.Query<Raza>(sql).ToList();
+            }
+            return _ListaRazas;
+        }
+            public static List<Bando> ListarBandos()
+        {
+            using (SqlConnection db = new SqlConnection(_connectionString))
+            {
+                string sql = "SELECT * FROM Bando";
+                _ListaBandos = db.Query<Bando>(sql).ToList();
+            }
+            return _ListaBandos;
+        }
+            public static List<HakiArmadura> ListarHakiA()
+        {
+            using (SqlConnection db = new SqlConnection(_connectionString))
+            {
+                string sql = "SELECT * FROM HakiArmadura";
+                _ListaHakiArmadura = db.Query<HakiArmadura>(sql).ToList();
+            }
+            return _ListaHakiArmadura;
+        }
+            public static List<HakiObservacion> ListarHakiO()
+        {
+            using (SqlConnection db = new SqlConnection(_connectionString))
+            {
+                string sql = "SELECT * FROM HakiObservacion";
+                _ListaHakiObservacion = db.Query<HakiObservacion>(sql).ToList();
+            }
+            return _ListaHakiObservacion;
+        }
+            public static List<HakiRey> ListarHakiR()
+        {
+            using (SqlConnection db = new SqlConnection(_connectionString))
+            {
+                string sql = "SELECT * FROM HakiRey";
+                _ListaHakiRey = db.Query<HakiRey>(sql).ToList();
+            }
+            return _ListaHakiRey;
+        }
         public static PersonajeXTemporada GetPersonajeByID(int IdPersonaje, int IdTemporada)
         {
             PersonajeXTemporada miPersonaje = null;

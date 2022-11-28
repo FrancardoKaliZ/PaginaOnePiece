@@ -28,22 +28,23 @@ function mostrarPersonajes(idT)
    function (response)
    {
     let cards = "";
+    console.log(response);
     for(let i = 0; i < response.infoxPersonaje.length; i++)
     {
       cards += "<div class='card text-center border-dark mb-3' style='width: 18rem;' id='CardPersonajes'>"+
-                  "<img src='/"+response.infoxPersonaje[i].foto+"' class='card-img-top' alt='...' id='imgPersonaje'>"+
+                  "<img src='/"+response.infoxPersonaje[i].foto+"' class='card-img-top img-fluid' alt='...' id='imgPersonaje'>"+
                   "<p>______________________________________</p>"+
                   "<div class='card-body'>"+
                     "<h4 class='card-title' id='recompensa'> $"+response.listaPersonajes[i].recompensa+"</h4>"+
                     "<p>______________________________________</p>"+
-                    "<p class='card-text'>" +response.infoxPersonaje[i].nombrePersonaje +"</p>"+
-                    "<button type='button' class='btn btn-primary' onclick='mostrarInfoPersonaje("+response.infoxPersonaje[i].idPersonaje+")'>"+"Más Info"+"</button>"
+                    "<h5 class='card-text'>" +response.infoxPersonaje[i].nombrePersonaje +"</h5>"+
+                    "<button type='button' class='btn btn-primary' onclick='mostrarInfoPersonaje("+response.infoxPersonaje[i].idPersonaje+")'>"+"Más Info"+"</button>"+
                   "</div>"+
                 "</div>";
-          "<a href=/Home/AgregarPersonaje?IdPersonaje="+idT.toString()+" class='btn btn-primary'>Agregar Personaje</a>";
-    $("#Titulo").html("Personajes");
-    $("#DescripcionTemporada").html(cards);
    }
+    cards += "<a id='botonAgregarPersonaje' href=/Home/AgregarPersonaje?IdTemporada="+idT.toString()+" class='btn btn-primary'>Agregar Personaje</a>";
+   $("#Titulo").html("Personajes");
+   $("#DescripcionTemporada").html(cards);
 }});
 
 }
