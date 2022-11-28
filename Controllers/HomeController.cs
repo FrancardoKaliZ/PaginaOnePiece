@@ -20,9 +20,9 @@ public class HomeController : Controller
         ViewBag.ListaMares = BD.ListarMares();
         return View();
     }
-    public IActionResult TemporadasById(int IdMar)
+    public IActionResult MenuMares()
     {
-        ViewBag.ListaTemporadasById = BD.ListarTemporadasById(IdMar);
+        ViewBag.ListaMares= BD.ListarMares();
         return View();
     }
     public IActionResult Temporadas()
