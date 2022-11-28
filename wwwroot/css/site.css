@@ -85,15 +85,10 @@ body {
   height: auto;
   margin-top: 5%;
 }
-.form-label{
- font-family: cursive;
+#botonAgregarPersonaje{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: yellow;
+  color: black;
 }
-.letras{
-  font-family: cursive;
- }
- .agregarTemporada
- {
-   position: absolute;
-   bottom: 10%;
-   right: 5%;
- }
