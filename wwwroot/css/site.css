@@ -85,3 +85,15 @@ body {
   height: auto;
   margin-top: 5%;
 }
+.form-label{
+ font-family: cursive;
+}
+.letras{
+  font-family: cursive;
+ }
+ .agregarTemporada
+ {
+   position: absolute;
+   bottom: 10%;
+   right: 5%;
+ }
