@@ -1,4 +1,4 @@
-<body>
+
   <div class="row">
     @foreach (Temporada temporada in @ViewBag.ListaTemporadas)
     {
@@ -37,5 +37,5 @@
       </div>
     </div>
   </div>
-  <a class="btn btn-success" href='@Url.Action("AgregarTemporada", "Home")'>Agregar Temporada</a>
-</body>
+  <a class="btn btn-success agregarTemporada" href='@Url.Action("AgregarTemporada", "Home")'>Agregar Temporada</a>
+

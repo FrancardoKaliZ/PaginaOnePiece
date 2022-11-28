@@ -1,29 +1,35 @@
-<body>
+
     <form action='@Url.Action("GuardarTemporada", "Home", new{IdTemporada= @ViewBag.IdTemporada})' method="post"
         enctype="multipart/form-data">
-        <label for="inputPassword5" class="form-label">Nombre</label>
+        <label for="inputPassword5" class="form-label colorTexto" style="color: white;">Nombre</label>
         <input type="text" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock"
             name="NombreTemporada">
         <div class="form-text">
         </div>
-        <label for="inputPassword5" class="form-label">Fecha de Inicio</label>
+        <label for="inputPassword5" class="form-label" style="color: white;">Fecha de Inicio</label>
         <input type="date" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock"
             name="FechaInicio">
         <div class="form-text">
         </div>
         <br>
-        <label for="inputPassword5" class="form-label">Fecha de fin</label>
+        <label for="inputPassword5" class="form-label" style="color: white;">Fecha de fin</label>
         <input type="date" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock"
             name="FechaFin">
         <br>
+<<<<<<< HEAD
         <label for="inputPassword5" class="form-label">Info de la temporada</label>
        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="InfoTemporada"></textarea>
+=======
+        <label for="inputPassword5" class="form-label" style="color: white;">Info de la temporada</label>
+        <input type="text" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock"
+            name="InfoTemporada">
+>>>>>>> bce3439ab2ee28548c014f86628aec2b55215544
         <br>
-        <label for="inputPassword5" class="form-label">Capitulos</label>
+        <label for="inputPassword5" class="form-label" style="color: white;">Capitulos</label>
         <input type="text" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock"
             name="Capitulos">
         <br>
-        <label class="form-label" for="customFile">Foto de la temporada</label>
+        <label class="form-label" for="customFile" style="color: white;">Foto de la temporada</label>
         <input type="file" name="Foto" />
         <br>
         <br>
@@ -40,4 +46,3 @@
         <input type="hidden" name="IdTemporada" value="@ViewBag.IdTemporada">
         <input type="submit" value="Submit">
     </form>
-</body>
