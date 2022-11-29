@@ -13,7 +13,7 @@ html {
   min-height: 100%;
 }
 
-body {
+.bodyLayout {
   margin-bottom: 60px;
   background-image: url("../../Fondo.jpg");
   background-repeat: no-repeat;
@@ -73,6 +73,22 @@ body {
   width: 100%;
   height: 300px;
 }
+.form-label{
+  font-family: cursive;}
+
+ .letras{
+   font-family: cursive;
+  }
+  .agregarTemporada
+  {
+    position: absolute;
+    bottom: 10%;
+    right: 5%;
+  }
+  .margen
+  {
+    margin-top: 5%;
+  }
 #CardPersonajes{
   margin-left: 18%;
   display: flex;

@@ -1,8 +1,14 @@
+<<<<<<< HEAD
 <div class="row">
+=======
+<div class="container">
+ <div class="row">
+
+>>>>>>> 87fbd348103f296a87347b0aca8c7c7eeac740e7
     @foreach (Temporada temporada in @ViewBag.ListaTemporadas)
     {
       <div class="col-sm-4">
-        <div class="card" style="width: 18rem;">
+        <div class="card margen">
           <img class="card-img-top imagenTemp" src="/@temporada.Foto" alt="Card image cap">
           <div class="card-body">
             <h3 class="card-text">@temporada.NombreTemporada</h3>
@@ -16,7 +22,8 @@
         </div>
       </div>
     }
-  </div>
+ </div>
+
   <div class="modal fade" id="ModalTemporada" tabindex="-1" role="dialog" aria-labelledby="ModalTemporada"
     aria-hidden="true">
     <div class="modal-dialog">
@@ -38,3 +45,4 @@
   </div>
   <a class="btn btn-success agregarTemporada" href='@Url.Action("AgregarTemporada", "Home")'>Agregar Temporada</a>
 
+</div>
