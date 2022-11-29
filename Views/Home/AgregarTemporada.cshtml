@@ -16,33 +16,29 @@
         <input type="date" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock"
             name="FechaFin">
         <br>
-<<<<<<< HEAD
-        <label for="inputPassword5" class="form-label">Info de la temporada</label>
-       <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="InfoTemporada"></textarea>
-=======
         <label for="inputPassword5" class="form-label" style="color: white;">Info de la temporada</label>
-        <input type="text" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock"
-            name="InfoTemporada">
->>>>>>> bce3439ab2ee28548c014f86628aec2b55215544
+       <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="InfoTemporada"></textarea>
         <br>
         <label for="inputPassword5" class="form-label" style="color: white;">Capitulos</label>
         <input type="text" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock"
             name="Capitulos">
         <br>
         <label class="form-label" for="customFile" style="color: white;">Foto de la temporada</label>
-        <input type="file" name="Foto" />
+        <input type="file" name="Foto"style="color: white;" />
         <br>
         <br>
 
-    <label for="exampleFormControlSelect1">Donde se lleva a cabo la temporada</label>
+    <label for="exampleFormControlSelect1" style="color: white;">Donde se lleva a cabo la temporada</label>
         <div class="form-text" id="exampleFormControlSelect1">
-            <select name="IdMar">
+            <select name="IdMar">   
                  @foreach (Mar item in ViewBag.ListaMares)
                  {
                     <option value="@item.IdMar">@item.NombreMar</option>
             }
             </select>
         </div>
+        <br>
+        <br>
         <input type="hidden" name="IdTemporada" value="@ViewBag.IdTemporada">
         <input type="submit" value="Submit">
     </form>

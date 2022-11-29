@@ -9,11 +9,7 @@ namespace PaginaOnePiece.Models;
 
     public static class BD
     {
-<<<<<<< HEAD
-        private static string _connectionString = @"Server=DESKTOP-8FIRVQB\SQLEXPRESS;DataBase=OnePiece;Trusted_Connection=True;";
-=======
-        private static string _connectionString = @"Server=DESKTOP-C3LD3QR\sqlexpress;DataBase=OnePiece;Trusted_Connection=True;";
->>>>>>> bce3439ab2ee28548c014f86628aec2b55215544
+        private static string _connectionString = @"Server=A-PHZ2-CIDI-017;DataBase=OnePiece;Trusted_Connection=True;";
         private static List<PersonajeXTemporada> _ListaPersonajesXTemporada = new List<PersonajeXTemporada>();
         private static List<Temporada> _ListaTemporadas = new List<Temporada>();
         private static List<Temporada> _ListaTemporadasById = new List<Temporada>();
@@ -154,13 +150,16 @@ namespace PaginaOnePiece.Models;
                 db.Execute(sql, new { NombreTemporada = temp.NombreTemporada, FechaInicio = temp.FechaInicio, FechaFin = temp.FechaFin, InfoTemporada = temp.InfoTemporada, Capitulos = temp.Capitulos, Foto = temp.Foto , IdMar = temp.IdMar});
             }
         }
-        public static void AgregarPersonaje(Personaje pers)
+        public static int AgregarPersonaje(Personaje pers)
         {
+            int devolver=-1;
             using (SqlConnection db = new SqlConnection(_connectionString))
             {
                 string sql = "INSERT INTO Personaje(NombrePersonaje,InfoPersonaje,IdMar,IdRaza,Foto) VALUES(@NombrePersonaje,@InfoPersonaje,@IdMar,@IdRaza,@Foto)";
                 db.Execute(sql, new { NombrePersonaje = pers.NombrePersonaje, InfoPersonaje = pers.InfoPersonaje, IdMar = pers.IdMar, IdRaza = pers.IdRaza, Foto = pers.Foto});
+                devolver = db.QueryFirstOrDefault<int>("Select MAX(IdPersonaje) FROM Personaje");
             }
+            return devolver;
         }
         public static void AgregarPersonajeInfoXtemporada(PersonajeXTemporada personajeXt)
         {

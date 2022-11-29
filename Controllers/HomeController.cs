@@ -96,7 +96,8 @@ public class HomeController : Controller
     [HttpPost]
     public IActionResult GuardarPersonaje(Personaje personaje,PersonajeXTemporada per, IFormFile file)
     {
-        BD.AgregarPersonaje(personaje);
+        int NuevoId = BD.AgregarPersonaje(personaje);
+        per.IdPersonaje = NuevoId;
         BD.AgregarPersonajeInfoXtemporada(per);
         ViewBag.ListaTemporadas = BD.ListarTemporadas();
         ViewBag.listaPersonajes = BD.ListarPersonajes();
