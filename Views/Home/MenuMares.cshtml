@@ -1,9 +1,8 @@
 
-   <div class="row"></div>
   @foreach (Mar mar in @ViewBag.ListaMares)
     {
       <div class="col-sm-4">
-        <div class="card" style="width: 18rem;">
+        <div class="card margen" style="width: 18rem;">
           <img class="card-img-top imagenTemp" src="/@mar.Foto" alt="Card image cap">
           <div class="card-body">
             <h3 class="card-text">@mar.NombreMar</h3>
@@ -11,4 +10,3 @@
         </div>
       </div>
     }
-</div>

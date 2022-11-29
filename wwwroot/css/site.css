@@ -73,6 +73,22 @@ body {
   width: 100%;
   height: 300px;
 }
+.form-label{
+  font-family: cursive;}
+
+ .letras{
+   font-family: cursive;
+  }
+  .agregarTemporada
+  {
+    position: absolute;
+    bottom: 10%;
+    right: 5%;
+  }
+  .margen
+  {
+    margin-top: 10%;
+  }
 #CardPersonajes{
   margin-left: 18%;
   display: flex;
