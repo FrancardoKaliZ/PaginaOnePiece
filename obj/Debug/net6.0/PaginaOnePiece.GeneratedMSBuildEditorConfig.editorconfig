@@ -8,53 +8,53 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = PaginaOnePiece
 build_property.RootNamespace = PaginaOnePiece
-build_property.ProjectDir = C:\Users\franc\Desktop\PagiaOnePiece\PaginaOnePiece\
+build_property.ProjectDir = c:\Users\franc\Desktop\PagiaOnePiece\PaginaOnePiece\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\franc\Desktop\PagiaOnePiece\PaginaOnePiece
+build_property.MSBuildProjectDirectory = c:\Users\franc\Desktop\PagiaOnePiece\PaginaOnePiece
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/franc/Desktop/PagiaOnePiece/PaginaOnePiece/Views/Home/AgregarPersonaje.cshtml]
+[c:/Users/franc/Desktop/PagiaOnePiece/PaginaOnePiece/Views/Home/AgregarPersonaje.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBZ3JlZ2FyUGVyc29uYWplLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/franc/Desktop/PagiaOnePiece/PaginaOnePiece/Views/Home/AgregarTemporada.cshtml]
+[c:/Users/franc/Desktop/PagiaOnePiece/PaginaOnePiece/Views/Home/AgregarTemporada.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBZ3JlZ2FyVGVtcG9yYWRhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/franc/Desktop/PagiaOnePiece/PaginaOnePiece/Views/Home/Index.cshtml]
+[c:/Users/franc/Desktop/PagiaOnePiece/PaginaOnePiece/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/franc/Desktop/PagiaOnePiece/PaginaOnePiece/Views/Home/MenuMares.cshtml]
+[c:/Users/franc/Desktop/PagiaOnePiece/PaginaOnePiece/Views/Home/MenuMares.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxNZW51TWFyZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/franc/Desktop/PagiaOnePiece/PaginaOnePiece/Views/Home/Privacy.cshtml]
+[c:/Users/franc/Desktop/PagiaOnePiece/PaginaOnePiece/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/franc/Desktop/PagiaOnePiece/PaginaOnePiece/Views/Home/Temporadas.cshtml]
+[c:/Users/franc/Desktop/PagiaOnePiece/PaginaOnePiece/Views/Home/Temporadas.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxUZW1wb3JhZGFzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/franc/Desktop/PagiaOnePiece/PaginaOnePiece/Views/Shared/Error.cshtml]
+[c:/Users/franc/Desktop/PagiaOnePiece/PaginaOnePiece/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/franc/Desktop/PagiaOnePiece/PaginaOnePiece/Views/Shared/_ValidationScriptsPartial.cshtml]
+[c:/Users/franc/Desktop/PagiaOnePiece/PaginaOnePiece/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/franc/Desktop/PagiaOnePiece/PaginaOnePiece/Views/_ViewImports.cshtml]
+[c:/Users/franc/Desktop/PagiaOnePiece/PaginaOnePiece/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/franc/Desktop/PagiaOnePiece/PaginaOnePiece/Views/_ViewStart.cshtml]
+[c:/Users/franc/Desktop/PagiaOnePiece/PaginaOnePiece/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/franc/Desktop/PagiaOnePiece/PaginaOnePiece/Views/Shared/_Layout.cshtml]
+[c:/Users/franc/Desktop/PagiaOnePiece/PaginaOnePiece/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-lsyqhdvlw7
