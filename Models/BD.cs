@@ -9,12 +9,8 @@ namespace PaginaOnePiece.Models;
 
     public static class BD
     {
-<<<<<<< HEAD
-        private static string _connectionString = @"Server=A-PHZ2-CIDI-017;DataBase=OnePiece;Trusted_Connection=True;";
-=======
-        private static string _connectionString = @"Server=A-PHZ2-CIDI-018;DataBase=OnePiece;Trusted_Connection=True;";
+        private static string _connectionString = @"Server=DESKTOP-8FIRVQB\SQLEXPRESS;DataBase=OnePiece;Trusted_Connection=True;";
 
->>>>>>> 87fbd348103f296a87347b0aca8c7c7eeac740e7
         private static List<PersonajeXTemporada> _ListaPersonajesXTemporada = new List<PersonajeXTemporada>();
         private static List<Temporada> _ListaTemporadas = new List<Temporada>();
         private static List<Temporada> _ListaTemporadasById = new List<Temporada>();
@@ -25,6 +21,7 @@ namespace PaginaOnePiece.Models;
         private static List<HakiArmadura> _ListaHakiArmadura = new List<HakiArmadura>();
         private static List<HakiObservacion> _ListaHakiObservacion = new List<HakiObservacion>();
         private static List<HakiRey> _ListaHakiRey = new List<HakiRey>();
+        private static List<Tripulacion> _ListaTripulacion = new List<Tripulacion>();
         
             public static List<Temporada> ListarTemporadas()
         {
@@ -110,6 +107,15 @@ namespace PaginaOnePiece.Models;
             }
             return _ListaHakiRey;
         }
+            public static List<Tripulacion> ListarTripulacion()
+        {
+            using (SqlConnection db = new SqlConnection(_connectionString))
+            {
+                string sql = "SELECT * FROM Tripulacion";
+                _ListaTripulacion = db.Query<Tripulacion>(sql).ToList();
+            }
+            return _ListaTripulacion;
+        }
         public static PersonajeXTemporada GetPersonajeByID(int IdPersonaje, int IdTemporada)
         {
             PersonajeXTemporada miPersonaje = null;
@@ -170,8 +176,8 @@ namespace PaginaOnePiece.Models;
         {
             using (SqlConnection db = new SqlConnection(_connectionString))
             {
-                string sql = "INSERT INTO PersonajeXTemporada(IdPersonaje,IdTemporada,IdBando,IdHakiArmadura,IdHakiObservacion,IdHakiRey,IdTripulacion) VALUES(@IdPersonaje,@IdTemporada,@IdBando,@IdHakiArmadura,@IdHakiObservacion,@IdHakiRey,@IdTripulacion)";
-                db.Execute(sql, new {IdPersonaje = personajeXt.IdPersonaje, IdTemporada = personajeXt.IdTemporada , IdBando = personajeXt.IdBando , IdHakiArmadura = personajeXt.IdHakiArmadura, IdHakiObservacion = personajeXt.IdHakiObservacion, IdHakiRey = personajeXt.IdHakiRey, IdTripulacion = personajeXt.IdTripulacion});
+                string sql = "INSERT INTO PersonajeXTemporada(IdPersonaje,IdTemporada,IdBando,IdHakiArmadura,IdHakiObservacion,IdHakiRey,IdTripulacion,Recompensa) VALUES(@IdPersonaje,@IdTemporada,@IdBando,@IdHakiArmadura,@IdHakiObservacion,@IdHakiRey,@IdTripulacion,@Recompensa)";
+                db.Execute(sql, new {IdPersonaje = personajeXt.IdPersonaje, IdTemporada = personajeXt.IdTemporada , IdBando = personajeXt.IdBando , IdHakiArmadura = personajeXt.IdHakiArmadura, IdHakiObservacion = personajeXt.IdHakiObservacion, IdHakiRey = personajeXt.IdHakiRey, IdTripulacion = personajeXt.IdTripulacion, Recompensa = personajeXt.Recompensa});
             }
         }
          public static void EliminarPersonaje(int IdPersonaje)

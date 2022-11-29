@@ -90,6 +90,7 @@ public class HomeController : Controller
         ViewBag.ListaHakiA = BD.ListarHakiA();
         ViewBag.ListaHakiO = BD.ListarHakiO();
         ViewBag.ListaHakiR = BD.ListarHakiR();
+        ViewBag.ListaTripulaciones = BD.ListarTripulacion();
         ViewBag.IdTemporada = IdTemporada;
         return View("AgregarPersonaje");
     }
