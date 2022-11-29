@@ -13,7 +13,7 @@ html {
   min-height: 100%;
 }
 
-body {
+.bodyLayout {
   margin-bottom: 60px;
   background-image: url("../../Fondo.jpg");
   background-repeat: no-repeat;
@@ -87,7 +87,7 @@ body {
   }
   .margen
   {
-    margin-top: 10%;
+    margin-top: 5%;
   }
 #CardPersonajes{
   margin-left: 18%;
