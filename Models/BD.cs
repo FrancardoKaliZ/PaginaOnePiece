@@ -9,7 +9,11 @@ namespace PaginaOnePiece.Models;
 
     public static class BD
     {
+<<<<<<< HEAD
         private static string _connectionString = @"Server=A-PHZ2-CIDI-022;DataBase=OnePiece;Trusted_Connection=True;";
+=======
+        private static string _connectionString = @"Server=A-PHZ2-CIDI-019;DataBase=OnePiece;Trusted_Connection=True;";
+>>>>>>> 71ae565e5f3a1db28ebeb0a1095863b812d80895
 
         private static List<PersonajeXTemporada> _ListaPersonajesXTemporada = new List<PersonajeXTemporada>();
         private static List<Temporada> _ListaTemporadas = new List<Temporada>();
@@ -259,6 +263,7 @@ namespace PaginaOnePiece.Models;
             string sql= "UPDATE Personaje SET NombrePersonaje=@NombrePersonaje, InfoPersonaje=@InfoPersonaje, IdMar=@IdMar,  IdRaza=@IdRaza,Foto=@Foto WHERE IdPersonaje = @IdPersonaje";
             using(SqlConnection db = new SqlConnection(_connectionString))
             {
+<<<<<<< HEAD
                db.Execute(sql, new{IdPersonaje=per.IdPersonaje,NombrePersonaje =per.NombrePersonaje,InfoPersonaje=per.InfoPersonaje, IdMar=per.IdMar, IdRaza=per.IdRaza , Foto=per.Foto});
             }
         }
@@ -268,6 +273,10 @@ namespace PaginaOnePiece.Models;
             using(SqlConnection db = new SqlConnection(_connectionString))
             {
                db.Execute(sql, new{IdPersonaje=per.IdPersonaje, IdTemporada=per.IdTemporada, IdBando=per.IdBando, IdHakiArmadura=per.IdHakiArmadura, IdHakiObservacion=per.IdHakiObservacion, IdHakiRey=per.IdHakiRey,IdTripulacion=per.IdTripulacion,Recompensa=per.Recompensa});
+=======
+               db.Execute(sql, new{NombrePersonaje = per.NombrePersonaje,InfoPersonaje = per.InfoPersonaje, IdMar = per.IdMar,IdRaza = per.IdRaza,Foto = per.Foto});
+>>>>>>> 71ae565e5f3a1db28ebeb0a1095863b812d80895
             }
+            return per;
         }
     }
