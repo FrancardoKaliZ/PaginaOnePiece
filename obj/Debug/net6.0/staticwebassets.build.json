@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "yoiL0m3ZZhjlDe98yDPYUx+ZYceuOgPvvfdYyBDT7+A=",
+  "Hash": "kOLc64cFNXiBIEqRX1sXS39OMWK7O6WBHGtRArb2g8Q=",
   "Source": "PaginaOnePiece",
   "BasePath": "_content/PaginaOnePiece",
   "Mode": "Default",
@@ -68,6 +68,23 @@
       "OriginalItemSpec": "wwwroot\\AgregarTemp.png"
     },
     {
+      "Identity": "C:\\Users\\46916289\\Desktop\\PaginaOnePiece\\PaginaOnePiece\\wwwroot\\AllBlue.jpg",
+      "SourceId": "PaginaOnePiece",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\46916289\\Desktop\\PaginaOnePiece\\PaginaOnePiece\\wwwroot\\",
+      "BasePath": "_content/PaginaOnePiece",
+      "RelativePath": "AllBlue.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\AllBlue.jpg"
+    },
+    {
       "Identity": "C:\\Users\\46916289\\Desktop\\PaginaOnePiece\\PaginaOnePiece\\wwwroot\\Arabasta.jpg",
       "SourceId": "PaginaOnePiece",
       "SourceType": "Discovered",
@@ -119,6 +136,23 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
+      "Identity": "C:\\Users\\46916289\\Desktop\\PaginaOnePiece\\PaginaOnePiece\\wwwroot\\EastBlue.jpg",
+      "SourceId": "PaginaOnePiece",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\46916289\\Desktop\\PaginaOnePiece\\PaginaOnePiece\\wwwroot\\",
+      "BasePath": "_content/PaginaOnePiece",
+      "RelativePath": "EastBlue.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\EastBlue.jpg"
+    },
+    {
       "Identity": "C:\\Users\\46916289\\Desktop\\PaginaOnePiece\\PaginaOnePiece\\wwwroot\\favicon.ico",
       "SourceId": "PaginaOnePiece",
       "SourceType": "Discovered",
@@ -168,6 +202,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\FondoTitulos.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\46916289\\Desktop\\PaginaOnePiece\\PaginaOnePiece\\wwwroot\\GrandLine.jpg",
+      "SourceId": "PaginaOnePiece",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\46916289\\Desktop\\PaginaOnePiece\\PaginaOnePiece\\wwwroot\\",
+      "BasePath": "_content/PaginaOnePiece",
+      "RelativePath": "GrandLine.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\GrandLine.jpg"
     },
     {
       "Identity": "C:\\Users\\46916289\\Desktop\\PaginaOnePiece\\PaginaOnePiece\\wwwroot\\infoSerie.jfif",
@@ -1222,6 +1273,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Nami.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\46916289\\Desktop\\PaginaOnePiece\\PaginaOnePiece\\wwwroot\\NorthBlue.jpg",
+      "SourceId": "PaginaOnePiece",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\46916289\\Desktop\\PaginaOnePiece\\PaginaOnePiece\\wwwroot\\",
+      "BasePath": "_content/PaginaOnePiece",
+      "RelativePath": "NorthBlue.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\NorthBlue.jpg"
     },
     {
       "Identity": "C:\\Users\\46916289\\Desktop\\PaginaOnePiece\\PaginaOnePiece\\wwwroot\\OnePieceLogo_files\\192px.svg",
@@ -5610,6 +5678,23 @@
       "OriginalItemSpec": "wwwroot\\Shanks.jpg"
     },
     {
+      "Identity": "C:\\Users\\46916289\\Desktop\\PaginaOnePiece\\PaginaOnePiece\\wwwroot\\SouthBlue.jpg",
+      "SourceId": "PaginaOnePiece",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\46916289\\Desktop\\PaginaOnePiece\\PaginaOnePiece\\wwwroot\\",
+      "BasePath": "_content/PaginaOnePiece",
+      "RelativePath": "SouthBlue.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\SouthBlue.jpg"
+    },
+    {
       "Identity": "C:\\Users\\46916289\\Desktop\\PaginaOnePiece\\PaginaOnePiece\\wwwroot\\Usopp.jpg",
       "SourceId": "PaginaOnePiece",
       "SourceType": "Discovered",
@@ -5625,6 +5710,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Usopp.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\46916289\\Desktop\\PaginaOnePiece\\PaginaOnePiece\\wwwroot\\WestBlue.jpg",
+      "SourceId": "PaginaOnePiece",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\46916289\\Desktop\\PaginaOnePiece\\PaginaOnePiece\\wwwroot\\",
+      "BasePath": "_content/PaginaOnePiece",
+      "RelativePath": "WestBlue.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\WestBlue.jpg"
     },
     {
       "Identity": "C:\\Users\\46916289\\Desktop\\PaginaOnePiece\\PaginaOnePiece\\wwwroot\\Zoro.jpg",
