@@ -9,7 +9,7 @@ namespace PaginaOnePiece.Models;
 
     public static class BD
     {
-        private static string _connectionString = @"Server=DESKTOP-C3LD3QR\SQLEXPRESS;DataBase=OnePiece;Trusted_Connection=True;";
+        private static string _connectionString = @"Server=A-PHZ2-CIDI-022;DataBase=OnePiece;Trusted_Connection=True;";
 
         private static List<PersonajeXTemporada> _ListaPersonajesXTemporada = new List<PersonajeXTemporada>();
         private static List<Temporada> _ListaTemporadas = new List<Temporada>();
@@ -182,10 +182,18 @@ namespace PaginaOnePiece.Models;
         }
          public static void EliminarPersonaje(int IdPersonaje)
         {
-            string sql= "DELETE FROM Personajes WHERE idPErsonaje = @PIdPersonaje";
+            string sql= "DELETE FROM Personajes WHERE idPersonaje = @PIdPersonaje";
             using(SqlConnection db = new SqlConnection(_connectionString))
             {
                db.Execute(sql, new{PIdPersonaje =IdPersonaje });
+            }
+        }
+         public static void EliminarPersonajeXtemp(int IdTemporada)
+        {
+            string sql= "DELETE FROM PersonajeXTemporada WHERE IdTemporada = @IdTemporada";
+            using(SqlConnection db = new SqlConnection(_connectionString))
+            {
+               db.Execute(sql, new{IdTemporada =IdTemporada });
             }
         }
 
@@ -246,12 +254,20 @@ namespace PaginaOnePiece.Models;
             }
             return miPersonaje;
          }
-           public static Personaje EditarPersonaje(Personaje per)
+           public static void EditarPersonaje(Personaje per)
         {
-            string sql= "UPDATE Personaje SET Personaje(NombrePersonaje, InfoPersonaje, IdMar,  IdRaza, Foto) Values(@PNombrePersonaje,@PInfoPersonaje,@PIdMar,@PIdRaza,@PFoto) WHERE IdPersonaje = @PIdPersonaje";
+            string sql= "UPDATE Personaje SET NombrePersonaje=@NombrePersonaje, InfoPersonaje=@InfoPersonaje, IdMar=@IdMar,  IdRaza=@IdRaza,Foto=@Foto WHERE IdPersonaje = @IdPersonaje";
             using(SqlConnection db = new SqlConnection(_connectionString))
             {
-               db.Execute(sql, new{NombrePersonaje =per.NombrePersonaje,InfoPersonaje=per.InfoPersonaje, IdMar=per.IdMar,IdRaza=per.IdRaza,Foto=per.Foto});
+               db.Execute(sql, new{IdPersonaje=per.IdPersonaje,NombrePersonaje =per.NombrePersonaje,InfoPersonaje=per.InfoPersonaje, IdMar=per.IdMar, IdRaza=per.IdRaza , Foto=per.Foto});
+            }
+        }
+            public static void EditarPersonajeXtemporada(PersonajeXTemporada per)
+        {
+            string sql= "UPDATE PersonajeXTemporada SET IdPersonaje=@IdPersonaje,IdTemporada=@IdTemporada,IdBando=@IdBando,IdHakiArmadura=@IdHakiArmadura,IdHakiObservacion=@IdHakiObservacion,IdHakiRey=@IdHakiRey,IdTripulacion=@IdTripulacion,Recompensa=@Recompensa WHERE IdPersonaje = @IdPersonaje";
+            using(SqlConnection db = new SqlConnection(_connectionString))
+            {
+               db.Execute(sql, new{IdPersonaje=per.IdPersonaje, IdTemporada=per.IdTemporada, IdBando=per.IdBando, IdHakiArmadura=per.IdHakiArmadura, IdHakiObservacion=per.IdHakiObservacion, IdHakiRey=per.IdHakiRey,IdTripulacion=per.IdTripulacion,Recompensa=per.Recompensa});
             }
         }
     }

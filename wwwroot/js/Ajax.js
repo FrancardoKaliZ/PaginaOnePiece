@@ -29,6 +29,7 @@ function mostrarPersonajes(idT)
    {
     let cards = "";
     console.log(response);
+    
     for(let i = 0; i < response.infoxPersonaje.length; i++)
     {
       cards += "<div class='card text-center border-dark mb-3' style='width: 18rem;' id='CardPersonajes'>"+
@@ -39,6 +40,7 @@ function mostrarPersonajes(idT)
                     "<p>______________________________________</p>"+
                     "<h5 class='card-text'>" +response.infoxPersonaje[i].nombrePersonaje +"</h5>"+
                     "<button type='button' class='btn btn-primary' onclick='mostrarInfoPersonaje("+response.infoxPersonaje[i].idPersonaje+")'>"+"Más Info"+"</button>"+
+                    "<a id='botonEditarPersonaje' href=/Home/EditarPersonaje?IdPersonaje="+response.infoxPersonaje[i].idPersonaje + " class='btn btn-primary'>Editar Personaje</a>" +
                   "</div>"+
                 "</div>";
    }

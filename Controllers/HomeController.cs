@@ -52,6 +52,7 @@ public class HomeController : Controller
     }
     public IActionResult EliminarTemporada(int IdTemporada)
     {
+        BD.EliminarPersonajeXtemp(IdTemporada);
         BD.EliminarTemporada(IdTemporada);
         return RedirectToAction("Temporadas", "Home");
     }
@@ -72,19 +73,20 @@ public class HomeController : Controller
         return View("AgregarTemporada");
     }
     [HttpPost]
-    public IActionResult GuardarTemporada(Temporada temp, IFormFile file)
+    public IActionResult GuardarTemporada(Temporada temp, IFormFile Foto)
     {
-        BD.AgregarTemporada(temp);
         ViewBag.ListaTemporadas = BD.ListarTemporadas();
-        if(file.Length>0)
+        if(Foto.Length>0)
         {
-            string wwwRootLocal =this.Environment.ContentRootPath + @"\wwwroot\" + file.FileName;
+            string wwwRootLocal =this.Environment.ContentRootPath + @"\wwwroot\" + Foto.FileName;
             using (var Stream=System.IO.File.Create(wwwRootLocal))
             {
-                file.CopyToAsync(Stream);
+                Foto.CopyToAsync(Stream);
+                temp.Foto = Foto.FileName;
             }
         }
-        return View("Temporadas");
+         BD.AgregarTemporada(temp);
+        return RedirectToAction("Temporadas", "Home");
     }
     public IActionResult AgregarPersonaje(int IdTemporada)
     {
@@ -99,42 +101,57 @@ public class HomeController : Controller
         return View("AgregarPersonaje");
     }
     [HttpPost]
-    public IActionResult GuardarPersonaje(Personaje personaje,PersonajeXTemporada per, IFormFile file)
+    public IActionResult GuardarPersonaje(Personaje personaje,PersonajeXTemporada per, IFormFile Foto)
     {
+        ViewBag.ListaTemporadas = BD.ListarTemporadas();
+        ViewBag.listaPersonajes = BD.ListarPersonajes();
+        if(Foto.Length>0)
+        {
+            string wwwRootLocal =this.Environment.ContentRootPath + @"\wwwroot\" + Foto.FileName;
+            using (var Stream=System.IO.File.Create(wwwRootLocal))
+            {
+                Foto.CopyToAsync(Stream);
+                personaje.Foto = Foto.FileName;
+            }
+        }
         int NuevoId = BD.AgregarPersonaje(personaje);
         per.IdPersonaje = NuevoId;
         BD.AgregarPersonajeInfoXtemporada(per);
-        ViewBag.ListaTemporadas = BD.ListarTemporadas();
-        ViewBag.listaPersonajes = BD.ListarPersonajes();
-        if(file.Length>0)
-        {
-            string wwwRootLocal =this.Environment.ContentRootPath + @"\wwwroot\" + file.FileName;
-            using (var Stream=System.IO.File.Create(wwwRootLocal))
-            {
-                file.CopyToAsync(Stream);
-            }
-        }
-        return View("Temporadas");
+        return RedirectToAction("Temporadas", "Home");
     }
 
-     public IActionResult EditarPersonaje()
+     public IActionResult EditarPersonaje(int IdPersonaje)
     {   
-        ViewBag.listaPersonajes = BD.ListarPersonajes();
+        ViewBag.Personaje = BD.verDetallePersonaje(IdPersonaje);
+        ViewBag.PersonajeXTemp = BD.GetPersonajeByIDNoTemp(IdPersonaje);
+        ViewBag.ListaMares = BD.ListarMares();;
+        ViewBag.ListaRazas =  BD.ListarRazas();
+        ViewBag.ListaBandos =  BD.ListarBandos();
+        ViewBag.ListaHakiA = BD.ListarHakiA();
+        ViewBag.ListaHakiO = BD.ListarHakiO();
+        ViewBag.ListaHakiR = BD.ListarHakiR();
+        ViewBag.ListaTripulaciones = BD.ListarTripulacion();
         return View("EditarPersonaje");
     }
-     public IActionResult GuardarPersonajeEditado(Personaje personaje, IformFile file)
+     public IActionResult GuardarPersonajeEditado(Personaje personaje, PersonajeXTemporada per, IFormFile Foto, string FotoAnterior)
     {   
-        int id=BD.EditarPersonaje(personaje);
-        ViewBag.listaPersonajes = BD.ListarPersonajes();
-        if(file.Length>0)
+        if(Foto!=null)
         {
-            string wwwRootLocal =this.Environment.ContentRootPath + @"\wwwroot\" + file.FileName;
+            string wwwRootLocal =this.Environment.ContentRootPath + @"\wwwroot\" + Foto.FileName;
             using (var Stream=System.IO.File.Create(wwwRootLocal))
             {
-                file.CopyToAsync(Stream);
+                Foto.CopyToAsync(Stream);
             }
+            personaje.Foto = Foto.FileName;
         }
-        return view("Temporadas");
+        else{
+            personaje.Foto = FotoAnterior;
+        }
+
+        BD.EditarPersonaje(personaje);
+        ViewBag.listaPersonajes = BD.ListarPersonajes();
+        BD.EditarPersonajeXtemporada(per);
+         return RedirectToAction("Temporadas", "Home");
     }
     public IActionResult Privacy()
     {

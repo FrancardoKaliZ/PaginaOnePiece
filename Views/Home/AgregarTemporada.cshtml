@@ -3,35 +3,35 @@
         enctype="multipart/form-data">
         <label for="inputPassword5" class="form-label colorTexto" style="color: white;">Nombre</label>
         <input type="text" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock"
-            name="NombreTemporada">
+            name="NombreTemporada" required>
         <div class="form-text">
         </div>
         <label for="inputPassword5" class="form-label" style="color: white;">Fecha de Inicio</label>
         <input type="date" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock"
-            name="FechaInicio">
+            name="FechaInicio" required>
         <div class="form-text">
         </div>
         <br>
         <label for="inputPassword5" class="form-label" style="color: white;">Fecha de fin</label>
         <input type="date" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock"
-            name="FechaFin">
+            name="FechaFin" required>
         <br>
         <label for="inputPassword5" class="form-label" style="color: white;">Info de la temporada</label>
-       <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="InfoTemporada"></textarea>
+       <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="InfoTemporada" required></textarea>
 
         <br>
         <label for="inputPassword5" class="form-label" style="color: white;">Capitulos</label>
         <input type="text" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock"
-            name="Capitulos">
+            name="Capitulos" required>
         <br>
         <label class="form-label" for="customFile" style="color: white;">Foto de la temporada</label>
-        <input type="file" name="Foto"style="color: white;" />
+        <input type="file" name="Foto"style="color: white;" required />
         <br>
         <br>
 
     <label for="exampleFormControlSelect1" style="color: white;">Donde se lleva a cabo la temporada</label>
-        <div class="form-text" id="exampleFormControlSelect1">
-            <select name="IdMar">   
+        <div class="form-text" id="exampleFormControlSelect1" >
+            <select name="IdMar" required>   
                  @foreach (Mar item in ViewBag.ListaMares)
                  {
                     <option value="@item.IdMar">@item.NombreMar</option>

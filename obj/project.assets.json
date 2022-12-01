@@ -482,19 +482,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {}
+    "C:\\Users\\46603069\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Desktop\\PaginaOnePiece\\PaginaOnePiece.csproj",
+      "projectUniqueName": "C:\\Users\\46603069\\Desktop\\PaginaOnePiece\\PaginaOnePiece.csproj",
       "projectName": "PaginaOnePiece",
-      "projectPath": "C:\\Users\\User\\Desktop\\PaginaOnePiece\\PaginaOnePiece.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Desktop\\PaginaOnePiece\\obj\\",
+      "projectPath": "C:\\Users\\46603069\\Desktop\\PaginaOnePiece\\PaginaOnePiece.csproj",
+      "packagesPath": "C:\\Users\\46603069\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\46603069\\Desktop\\PaginaOnePiece\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\46603069\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -547,7 +552,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,20 +1,21 @@
 <body>
-    <form action='@Url.Action("GuardarPersonaje", "Home", new{IdTemporada=@ViewBag.IdTemporada})' method="post"
+    <form action='@Url.Action("GuardarPersonajeEditado", "Home", new{IdTemporada=@ViewBag.IdTemporada})' method="post"
         enctype="multipart/form-data">
         <label for="inputPassword5" class="form-label" style="color: white;" >Nombre</label>
         <input type="text" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock"
-            name="NombrePersonaje" required>
-        <div class="form-text">
+            name="NombrePersonaje" value="@ViewBag.Personaje.NombrePersonaje" required>
+        <div class="form-text" >
+            <p>@ViewBag.Personaje.InfoPersonaje</p>
         </div>
         <label for="inputPassword5" class="form-label" style="color: white;">Info del personaje</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="InfoPersonaje" required></textarea>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="InfoPersonaje" value="@ViewBag.Personaje.InfoPersonaje" required> @ViewBag.Personaje.InfoPersonaje </textarea>
         <div class="form-text">
         </div>
         <br>
         <br>
         <label for="exampleFormControlSelect1" style="color: white;">En que mar nacio el personaje:</label>
-        <div class="form-text" id="exampleFormControlSelect1" required>
-            <select name="IdMar">
+        <div class="form-text" id="exampleFormControlSelect1">
+            <select name="IdMar" required value="@ViewBag.ListaMares[@ViewBag.Personaje.IdMar].NombreMar">
                  @foreach (Mar item in ViewBag.ListaMares)
                  {
                     <option value="@item.IdMar">@item.NombreMar</option>
@@ -24,8 +25,8 @@
         <br>
         <br>
         <label for="exampleFormControlSelect2" style="color: white;">Raza del personaje</label>
-        <div class="form-text" id="exampleFormControlSelect2" required>
-            <select name="IdRaza">
+        <div class="form-text" id="exampleFormControlSelect2" require>
+            <select name="IdRaza" required  value="@ViewBag.ListaRazas[@ViewBag.Personaje.IdRaza].NombreRaza">
                  @foreach (Raza item in ViewBag.ListaRazas)
                  {
                     <option value="@item.IdRaza">@item.NombreRaza</option>
@@ -35,8 +36,8 @@
         <br>
         <br>
         <label for="exampleFormControlSelect3" style="color: white;" >Bando del personaje:</label>
-        <div class="form-text" id="exampleFormControlSelect3" required>
-            <select name="IdBando">
+        <div class="form-text" id="exampleFormControlSelect3" >
+            <select name="IdBando" required value="@ViewBag.ListaBandos[@ViewBag.PersonajeXTemp .IdBando].NombreBando">
                  @foreach (Bando item in ViewBag.ListaBandos)
                  {
                     <option value="@item.IdBando">@item.NombreBando</option>
@@ -45,8 +46,8 @@
             <br>
             <br>
         <label for="exampleFormControlSelect4 " style="color: white;">Haki de armadura:</label>
-        <div class="form-text" id="exampleFormControlSelect4" required>
-            <select name="IdHakiArmadura">
+        <div class="form-text" id="exampleFormControlSelect4">
+            <select name="IdHakiArmadura" required value="@ViewBag.ListaHakiA[@ViewBag.PersonajeXTemp.IdHakiArmadura].EstadoHA">
                  @foreach (HakiArmadura item in ViewBag.ListaHakiA)
                  {
                     <option value="@item.IdHakiArmadura">@item.EstadoHA</option>
@@ -56,8 +57,8 @@
             <br>
         </div>
         <label for="exampleFormControlSelect5" style="color: white;">Haki de observacion:</label>
-        <div class="form-text" id="exampleFormControlSelect5" required>
-            <select name="IdHakiObservacion">
+        <div class="form-text" id="exampleFormControlSelect5">
+            <select name="IdHakiObservacion" required value="@ViewBag.ListaHakiO[@ViewBag.PersonajeXTemp.IdHakiObservacion].EstadoHO">
                  @foreach (HakiObservacion item in ViewBag.ListaHakiO)
                  {
                     <option value="@item.IdHakiObservacion">@item.EstadoHO</option>
@@ -67,8 +68,8 @@
             <br>
         </div>
         <label for="exampleFormControlSelect6" style="color: white;" required>Haki deL rey:</label>
-        <div class="form-text" id="exampleFormControlSelect6" required>
-            <select name="IdHakiRey">
+        <div class="form-text" id="exampleFormControlSelect6">
+            <select name="IdHakiRey" required value="@ViewBag.ListaHakiR[@ViewBag.PersonajeXTemp.IdHakiRey].EstadoHR">
                  @foreach (HakiRey item in ViewBag.ListaHakiR)
                  {
                     <option value="@item.IdHakiRey">@item.EstadoHR</option>
@@ -78,12 +79,12 @@
             <br>
         </div>
         <label for="number" style="color: white;">Recompensa:</label>
-        <input id="number" type="number" name="Recompensa" required>
+        <input id="number" type="number" name="Recompensa" value="@ViewBag.PersonajeXTemp.Recompensa" >
         <br>
         <br>
         <label for="exampleFormControlSelect7" style="color: white;">Tripulacion:</label>
-        <div class="form-text" id="exampleFormControlSelect7">
-            <select name="IdTripulacion">
+        <div class="form-text" id="exampleFormControlSelect7" value="@ViewBag.ListaTripulaciones[@ViewBag.PersonajeXTemp.IdTripulacion].NombreTripulacion">
+            <select name="IdTripulacion" required>
                  @foreach (Tripulacion item in ViewBag.ListaTripulaciones)
                  {
                     <option value="@item.IdTripulacion">@item.NombreTripulacion</option>
@@ -92,10 +93,12 @@
             <br>
             <br>
         <label class="form-label" for="customFile" style="color: white;">Foto del personaje</label>
-        <input type="file" name="Foto" style="color: white;" required/>
+        <input type="file" name="Foto" style="color: white;" />
+        <input type="hidden" value="@ViewBag.Personaje.Foto" name="FotoAnterior">
         <br>
         <br>
-        <input type="hidden" name="IdTemporada" value="@ViewBag.IdTemporada">
+        <input type="hidden" name="IdTemporada" value="@ViewBag.PersonajeXTemp.IdTemporada">
+        <input type="hidden" name="IdPersonaje" value="@ViewBag.Personaje.IdPersonaje">
         <input type="submit" value="Submit">
     </form>
 </body>

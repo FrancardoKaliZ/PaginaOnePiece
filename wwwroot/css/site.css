@@ -108,3 +108,10 @@ html {
   background-color: yellow;
   color: black;
 }
+#botonEditarPersonaje{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: greenyellow;
+  color: black;
+}
