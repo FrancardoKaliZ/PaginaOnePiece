@@ -9,7 +9,7 @@ namespace PaginaOnePiece.Models;
 
     public static class BD
     {
-        private static string _connectionString = @"Server=DESKTOP-8FIRVQB\SQLEXPRESS;DataBase=OnePiece;Trusted_Connection=True;";
+        private static string _connectionString = @"Server=DESKTOP-C3LD3QR\SQLEXPRESS;DataBase=OnePiece;Trusted_Connection=True;";
 
         private static List<PersonajeXTemporada> _ListaPersonajesXTemporada = new List<PersonajeXTemporada>();
         private static List<Temporada> _ListaTemporadas = new List<Temporada>();
@@ -207,6 +207,17 @@ namespace PaginaOnePiece.Models;
                 miTemporada = db.QueryFirstOrDefault<Temporada>(sql, new{PIdTemporada= IdTemporada});
             }
             return miTemporada;
+        }
+
+           public static Mar verDetalleMar(int IdMar)
+        {
+            Mar miMar= null;
+            using(SqlConnection db = new SqlConnection(_connectionString))
+            {
+                string sql = "SELECT * FROM Mar WHERE IdMar = @PIdMar";
+                miMar = db.QueryFirstOrDefault<Mar>(sql, new{PIdMar= IdMar});
+            }
+            return miMar;
         }
         public static Personaje verDetallePersonaje(int IdPersonaje)
         {

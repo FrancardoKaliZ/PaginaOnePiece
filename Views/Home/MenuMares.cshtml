@@ -5,13 +5,34 @@
         <div class="col-sm-4 col-md-4">
           <div class="card margen">
             <img class="card-img-top imagenTemp" src="/@mar.Foto" alt="Card image cap">
-            <div class="card-body">
-              <h3 class="card-text">@mar.NombreMar</h3>
-            </div>
+           <div class="card-body">
+                  <h3 class="card-text">@mar.NombreMar</h3>
+                  <button type="button" class="btn btn-success" data-toggle="modal" data-target="#ModalMenuMares"
+                  onclick="mostrarInfoMar(@mar.IdMar)">Info</button>
+                </div>
           </div>
         </div>
       }
   </div>
+     <div class="modal fade" id="ModalMenuMares" tabindex="-1" role="dialog" aria-labelledby="ModalMares"
+          aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="Titulo"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body" id="DescripcionMar">
+
+              </div>
+              <div class="modal-footer" id="Botones">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
 </div>
 
 

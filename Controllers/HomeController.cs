@@ -55,6 +55,10 @@ public class HomeController : Controller
         BD.EliminarTemporada(IdTemporada);
         return RedirectToAction("Temporadas", "Home");
     }
+     public Mar mostrarInfoMarAjax(int IdMar)
+    {
+        return BD.verDetalleMar(IdMar);
+    }
 
     public IActionResult EliminarPersonaje(int IdTemporada)
     {

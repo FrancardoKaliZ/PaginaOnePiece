@@ -67,3 +67,21 @@ function mostrarInfoPersonaje(idP)
    }
 });
 }
+
+function mostrarInfoMar(idM)
+{
+ $.ajax(
+ {
+   type: 'POST',
+   dataType: 'JSON',
+   url: '/Home/mostrarInfoMarAjax',
+   data: {idMar: idM},
+   success:
+   function (response)
+   {
+    $("#Titulo").html("Informacion del mar");
+    $("#DescripcionMar").html("<b>Nombre: </b> "+ response.nombreMar + "<br>" + "<b>Informacion:</b> " + response.infoMar);
+
+   }
+});
+}
