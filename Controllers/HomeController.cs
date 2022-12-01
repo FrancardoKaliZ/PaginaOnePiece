@@ -55,9 +55,16 @@ public class HomeController : Controller
         BD.EliminarTemporada(IdTemporada);
         return RedirectToAction("Temporadas", "Home");
     }
-     public Mar mostrarInfoMarAjax(int IdMar)
+     public JsonResult mostrarInfoMarAjax(int IdMar)
     {
-        return BD.verDetalleMar(IdMar);
+        List<Temporada> listaTemporadas = BD.ListarTemporadasById(IdMar);
+        List<Temporada> listaInfoTemp = new List<Temporada>();
+        Mar mar = BD.verDetalleMar(IdMar);
+        foreach (Temporada temp in listaTemporadas)
+        {
+            listaInfoTemp.Add(BD.verDetalleTemporada(temp.IdTemporada));
+        }
+        return Json(new {mar , listaTemporadas, listaInfoTemp });
     }
 
     public IActionResult EliminarPersonaje(int IdTemporada)
@@ -122,9 +129,9 @@ public class HomeController : Controller
         ViewBag.listaPersonajes = BD.ListarPersonajes();
         return View("EditarPersonaje");
     }
-     public IActionResult GuardarPersonajeEditado(Personaje personaje, IformFile file)
+     public IActionResult GuardarPersonajeEditado(Personaje personaje, IFormFile file)
     {   
-        int id=BD.EditarPersonaje(personaje);
+        personaje=BD.EditarPersonaje(personaje);
         ViewBag.listaPersonajes = BD.ListarPersonajes();
         if(file.Length>0)
         {
@@ -134,7 +141,7 @@ public class HomeController : Controller
                 file.CopyToAsync(Stream);
             }
         }
-        return view("Temporadas");
+        return View("Temporadas");
     }
     public IActionResult Privacy()
     {

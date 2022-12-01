@@ -9,7 +9,7 @@ namespace PaginaOnePiece.Models;
 
     public static class BD
     {
-        private static string _connectionString = @"Server=DESKTOP-C3LD3QR\SQLEXPRESS;DataBase=OnePiece;Trusted_Connection=True;";
+        private static string _connectionString = @"Server=A-PHZ2-CIDI-004;DataBase=OnePiece;Trusted_Connection=True;";
 
         private static List<PersonajeXTemporada> _ListaPersonajesXTemporada = new List<PersonajeXTemporada>();
         private static List<Temporada> _ListaTemporadas = new List<Temporada>();
@@ -251,7 +251,8 @@ namespace PaginaOnePiece.Models;
             string sql= "UPDATE Personaje SET Personaje(NombrePersonaje, InfoPersonaje, IdMar,  IdRaza, Foto) Values(@PNombrePersonaje,@PInfoPersonaje,@PIdMar,@PIdRaza,@PFoto) WHERE IdPersonaje = @PIdPersonaje";
             using(SqlConnection db = new SqlConnection(_connectionString))
             {
-               db.Execute(sql, new{NombrePersonaje =per.NombrePersonaje,InfoPersonaje=per.InfoPersonaje, IdMar=per.IdMar,IdRaza=per.IdRaza,Foto=per.Foto});
+               db.Execute(sql, new{NombrePersonaje = per.NombrePersonaje,InfoPersonaje = per.InfoPersonaje, IdMar = per.IdMar,IdRaza = per.IdRaza,Foto = per.Foto});
             }
+            return per;
         }
     }
