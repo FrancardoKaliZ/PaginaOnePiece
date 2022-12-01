@@ -116,6 +116,26 @@ public class HomeController : Controller
         }
         return View("Temporadas");
     }
+
+     public IActionResult EditarPersonaje()
+    {   
+        ViewBag.listaPersonajes = BD.ListarPersonajes();
+        return View("EditarPersonaje");
+    }
+     public IActionResult GuardarPersonajeEditado(Personaje personaje, IformFile file)
+    {   
+        int id=BD.EditarPersonaje(personaje);
+        ViewBag.listaPersonajes = BD.ListarPersonajes();
+        if(file.Length>0)
+        {
+            string wwwRootLocal =this.Environment.ContentRootPath + @"\wwwroot\" + file.FileName;
+            using (var Stream=System.IO.File.Create(wwwRootLocal))
+            {
+                file.CopyToAsync(Stream);
+            }
+        }
+        return view("Temporadas");
+    }
     public IActionResult Privacy()
     {
         return View();

@@ -246,4 +246,12 @@ namespace PaginaOnePiece.Models;
             }
             return miPersonaje;
          }
+           public static Personaje EditarPersonaje(Personaje per)
+        {
+            string sql= "UPDATE Personaje SET Personaje(NombrePersonaje, InfoPersonaje, IdMar,  IdRaza, Foto) Values(@PNombrePersonaje,@PInfoPersonaje,@PIdMar,@PIdRaza,@PFoto) WHERE IdPersonaje = @PIdPersonaje";
+            using(SqlConnection db = new SqlConnection(_connectionString))
+            {
+               db.Execute(sql, new{NombrePersonaje =per.NombrePersonaje,InfoPersonaje=per.InfoPersonaje, IdMar=per.IdMar,IdRaza=per.IdRaza,Foto=per.Foto});
+            }
+        }
     }
